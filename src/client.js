@@ -23,6 +23,7 @@ import configureStore from './store/configureStore';
 import { updateMeta } from './DOMUtils';
 import history from './history';
 import createApolloClient from './core/createApolloClient';
+import WebFont from 'webfontloader';
 
 const apolloClient = createApolloClient();
 
@@ -37,6 +38,16 @@ const fetch = createFetch({
 // Initialize a new Redux store
 // http://redux.js.org/docs/basics/UsageWithReact.html
 const store = configureStore(window.App.state, { apolloClient, fetch, history });
+
+
+
+//add Fonts
+WebFont.load({
+  google: {
+    families: ['Lora:700']
+  }
+});
+
 
 // Global (context) variables that can be easily accessed from any React component
 // https://facebook.github.io/react/docs/context.html

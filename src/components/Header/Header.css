@@ -9,39 +9,23 @@
 
 @import '../variables.css';
 
-:root {
-  --brand-color: #61dafb;
-}
-
-.root {
-  background: #373277;
-  color: #fff;
-}
-
 .container {
   margin: 0 auto;
-  padding: 20px 0;
   max-width: var(--max-content-width);
+  display: flex;
+  height:600px;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lora';
+  line-height: 48px;
+  font-size: 36px;
+  color: #4F4F4F;
 }
 
-.brand {
-  color: color(var(--brand-color) lightness(+10%));
-  text-decoration: none;
-  font-size: 1.75em; /* ~28px */
-}
-
-.brandTxt {
-  margin-left: 10px;
-}
-
-.banner {
-  text-align: center;
-}
-
-.bannerTitle {
-  margin: 0;
-  padding: 10px;
-  font-weight: normal;
-  font-size: 4em;
-  line-height: 1em;
-}
