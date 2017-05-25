@@ -20,7 +20,7 @@
   {
     "id": "header.brand",
     "description": "Brand name displayed in header",
-    "defaultMessage": "Your Company Brand",
+    "defaultMessage": "Your Company Bsdfsdrand",
     "message": "",
     "files": [
       "src/components/Header/Header.js"

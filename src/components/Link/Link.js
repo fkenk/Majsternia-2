@@ -9,7 +9,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import s from './Link.css';
 import history from '../../history';
+
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -49,7 +51,7 @@ class Link extends React.Component {
 
   render() {
     const { to, children, ...props } = this.props;
-    return <a href={to} {...props} onClick={this.handleClick}>{children}</a>;
+    return <a className={s.link} href={to} {...props} onClick={this.handleClick}>{children}</a>;
   }
 }
 

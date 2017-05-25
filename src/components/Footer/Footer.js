@@ -11,21 +11,31 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.css';
 import Link from '../Link';
+import GoogleMapReact from 'google-map-react';
 
 class Footer extends React.Component {
+  static defaultProps = {
+    center: {lat: 59.95, lng: 30.33},
+    zoom: 11
+  };
+
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <span className={s.text}>© Your Company</span>
-          <span className={s.spacer}>·</span>
-          <Link className={s.link} to="/">Home</Link>
-          <span className={s.spacer}>·</span>
-          <Link className={s.link} to="/admin">Admin</Link>
-          <span className={s.spacer}>·</span>
-          <Link className={s.link} to="/privacy">Privacy</Link>
-          <span className={s.spacer}>·</span>
-          <Link className={s.link} to="/not-found">Not Found</Link>
+      <div className={s.container}>
+        <div className={s.map}>
+          <GoogleMapReact
+            defaultCenter={this.props.center}
+            defaultZoom={this.props.zoom}
+          >
+          </GoogleMapReact>
+        </div>
+        <div className={s.text}>
+          <h3>Контакти</h3>
+          <p>+38 066 445 59 00</p>
+          <p>м. Мукачево, вул. Переяславська, 1</p>
+          <p><Link to="/">Каталог продукції</Link></p>
+          <p><Link to="/">Про нас</Link></p>
+          <p><Link to="/">Наші роботи</Link></p>
         </div>
       </div>
     );
