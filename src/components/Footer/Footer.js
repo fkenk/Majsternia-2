@@ -12,6 +12,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.css';
 import Link from '../Link';
 import GoogleMapReact from 'google-map-react';
+import classNames from 'classnames';
 
 class Footer extends React.Component {
   static defaultProps = {
@@ -33,9 +34,9 @@ class Footer extends React.Component {
           <h3>Контакти</h3>
           <p>+38 066 445 59 00</p>
           <p>м. Мукачево, вул. Переяславська, 1</p>
-          <p><Link to="/">Каталог продукції</Link></p>
-          <p><Link to="/">Про нас</Link></p>
-          <p><Link to="/">Наші роботи</Link></p>
+          <p><Link className={classNames(s.link)} to="/">Каталог продукції</Link></p>
+          <p><Link className={s.link} to="/">Про нас</Link></p>
+          <p><Link className={s.link} to="/">Наші роботи</Link></p>
         </div>
       </div>
     );

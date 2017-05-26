@@ -9,9 +9,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Link.css';
 import history from '../../history';
-
+import classNames from 'classnames';
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -51,8 +52,8 @@ class Link extends React.Component {
 
   render() {
     const { to, children, ...props } = this.props;
-    return <a className={s.link} href={to} {...props} onClick={this.handleClick}>{children}</a>;
+    return <a href={to} {...props} onClick={this.handleClick}>{children}</a>;
   }
 }
 
-export default Link;
+export default withStyles(s)(Link);

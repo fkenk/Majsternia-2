@@ -15,8 +15,9 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import normalizeCss from 'normalize.css';
 import s from './Layout.css';
 import Header from '../Header';
+import AboutUs from '../AboutUs';
+import Galery from '../Galery';
 import ContactForm from '../ContactForm';
-import Feedback from '../Feedback';
 import Footer from '../Footer';
 
 
@@ -30,7 +31,8 @@ class Layout extends React.Component {
       <div>
         <Header />
         {this.props.children}
-        <Feedback />
+        <AboutUs/>
+        <Galery/>
         <ContactForm />
         <Footer />
       </div>

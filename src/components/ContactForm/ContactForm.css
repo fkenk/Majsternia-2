@@ -4,15 +4,13 @@
   margin: 0 auto;
   padding: 20px 15px;
   max-width: var(--max-content-width);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   padding-bottom: 124px;
 }
 
 .form {
-  min-width: 30%;
-  width: 40%;
+  max-width: 497px;
+  margin: 0 auto;
 }
 
 input {
@@ -41,7 +39,6 @@ input[type=submit]:hover {
 }
 
 textarea {
-  box-sizing: border-box;
   width: 100%;
   padding: 12px 20px;
   margin: 5px 0;
@@ -50,4 +47,11 @@ textarea {
   outline: none;
   height: 7em;
 }
+
+@media (max-width: 360px) {
+  .text {
+    text-align: left;
+  }
+}
+
 

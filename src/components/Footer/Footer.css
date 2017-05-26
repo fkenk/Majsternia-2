@@ -14,8 +14,10 @@
   padding: 20px 15px;
   max-width: var(--max-content-width);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 124px;
+  height: auto;
 }
 
 .text {
@@ -25,6 +27,34 @@
 }
 
 .map {
-  width: 60%;
+  width: 660px;
+  height: 320px;
 }
 
+.link {
+  border-bottom: 2px solid #3C3C43;
+}
+
+.link,
+.link:active,
+.link:visited {
+  color: #3C3C43;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #a8a8a8;
+  border-bottom: 2px solid #979176;
+}
+
+@media (max-width: 360px) {
+  .map{
+    display: none;
+  }
+  .container {
+    display: block;
+  }
+  .text{
+    padding: 0;
+  }
+}

@@ -1,0 +1,57 @@
+@import '../variables.css';
+
+.container {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: var(--max-content-width);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.text {
+  max-width: 40%;
+  min-width: 320px;
+}
+.img {
+  height: 535px;
+  width: 441px;
+  margin-left: 5.583756345177665%;
+  margin-right: 2.90065264684554%;
+}
+.link {
+  border-bottom: 2px solid #3C3C43;
+  margin-right: 63px;
+}
+
+.link,
+.link:active,
+.link:visited {
+  color: #3C3C43;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #a8a8a8;
+  border-bottom: 2px solid #979176;
+}
+
+@media (max-width: 441px) {
+  .img {
+    height: 240px;
+    width: 320px;
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .redirect{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .link {
+    margin-bottom: 20px;
+  }
+}
