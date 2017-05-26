@@ -18,7 +18,8 @@
    * Layout
    * ======================================================================== */
 
-  --max-content-width: 1000px;
+  --max-content-width: 1379px;
+  --min-content-width: 360px;
 
   /*
    * Media queries breakpoints

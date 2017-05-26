@@ -1,0 +1,6 @@
+{
+  "name": "Galery",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Galery.js"
+}
