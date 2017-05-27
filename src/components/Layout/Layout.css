@@ -31,7 +31,9 @@ html {
   min-width: var(--min-content-width);
 }
 
-
+span{
+  color: #3C3C43;
+}
 body {
   line-height: 1;
 }

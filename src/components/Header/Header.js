@@ -60,11 +60,30 @@ class Header extends React.Component {
         
         <div className={s.container}>
             <div className={s.logo}>
-              <img src={logo} alt="Here is logo"></img>
-              <span>Майстерня</span>
+                    <img src={logo} alt="Here is logo"></img>
+                    <span>Майстерня</span>
+            </div>
+            <div className={s.header__content}>
+                <div className={s.sidebar}>
+                    <div className={s.statement}>
+                        <span>Створюємо шедeври
+                                з натурального каменю власноруч</span>
+                    </div>
+                    <div className={s.footer}>
+                        <div className={s.languageSwitcher}>
+                            <span>Укр</span>
+                            <span>/</span>
+                            <span>Рус</span>
+                        </div>
+                        <Link to="/" className={s.link}><div className={s.button}>Зв'язатись з нами</div></Link>
+                    </div>
+                </div>
+                <div className={s.info}>
+
+                </div>
+
             </div>
         </div>
-        
     );
   }
 }
