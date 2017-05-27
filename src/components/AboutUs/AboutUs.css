@@ -10,8 +10,24 @@
 
 }
 .text {
-  max-width: 40%;
+  max-width: 50%;
   min-width: 320px;
+}
+.text__header {
+  font-family: 'Lora';
+  font-size: 48px;
+  color: #4F4F4F;
+}
+
+.text__content {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 20px;
+}
+.text__redirect {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
 }
 .img {
   height: 535px;
@@ -21,7 +37,9 @@
 }
 .link {
   border-bottom: 2px solid #3C3C43;
-  margin-right: 63px;
+  margin-right: 5%;
+  white-space: nowrap;
+  padding-bottom: 5px;
 }
 
 .link,
@@ -46,7 +64,13 @@
 
 
 @media (max-width: 360px) {
-  .redirect{
+  .text__header {
+    font-size: 36px;
+  }
+  .text__content {
+    font-size: 16px;
+  }
+  .text__redirect{
     display: flex;
     flex-direction: column;
     align-items: baseline;

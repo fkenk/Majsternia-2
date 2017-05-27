@@ -11,8 +11,22 @@
 .form {
   max-width: 497px;
   margin: 0 auto;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
 }
 
+.text__header {
+  font-family: 'Lora';
+  font-size: 48px;
+  color: #4F4F4F;
+}
+
+.text__content {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 20px;
+}
 input {
   box-sizing: border-box;
   width: 100%;
@@ -21,6 +35,10 @@ input {
   border: 2px solid #3C3C43;
   border-radius: 2px;
   outline: none;
+}
+
+input::placeholder , textarea::placeholder{
+  color: #4F4F4F;
 }
 
 input[type=submit] {
@@ -32,6 +50,9 @@ input[type=submit] {
   cursor: pointer;
   border: 2px solid #3C3C43;
   border-radius: 2px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
 }
 
 input[type=submit]:hover {
@@ -49,6 +70,15 @@ textarea {
 }
 
 @media (max-width: 360px) {
+  .container{
+    padding-bottom: 60px;
+  }
+  .text__header {
+    font-size: 36px;
+  }
+  .text__content {
+    font-size: 16px;
+  }
   .text {
     text-align: left;
   }

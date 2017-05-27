@@ -8,8 +8,8 @@ class ContactForm extends React.Component {
     return (
       <div className={s.container}>
         <div className={s.text}>
-          <h2>Виготовимо наступний шедевр разом</h2>
-          <p>Зв’яжіться з нами та дізнайтесь більше</p>
+          <h2 className={s.text__header}>Виготовимо наступний шедевр разом</h2>
+          <p className={s.text__content}>Зв’яжіться з нами та дізнайтесь більше</p>
         </div>
         <div className={s.form}>
           <form >
