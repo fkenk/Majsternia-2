@@ -44,7 +44,7 @@ const store = configureStore(window.App.state, { apolloClient, fetch, history })
 //add Fonts
 WebFont.load({
   google: {
-    families: ['Lora:700']
+    families: ['Lora:700','Roboto']
   }
 });
 

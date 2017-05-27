@@ -26,6 +26,24 @@
   padding-left: 26px;
 }
 
+.text__header {
+  font-family: 'Lora';
+  font-size: 36px;
+  color: #4F4F4F;
+}
+.text__contacts {
+  color: #4F4F4F;
+}
+.text__phone {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 24px;
+}
+.text__street {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+}
 .map {
   width: 660px;
   height: 320px;
@@ -33,6 +51,10 @@
 
 .link {
   border-bottom: 2px solid #3C3C43;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 5px;
 }
 
 .link,
@@ -48,6 +70,16 @@
 }
 
 @media (max-width: 360px) {
+  .text__header {
+    font-size: 36px;
+  }
+  .text__phone {
+    font-size: 24px;
+  }
+
+  .text__street {
+    font-size: 16px;
+  }
   .map{
     display: none;
   }
