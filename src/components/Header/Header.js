@@ -17,6 +17,8 @@ import LanguageSwitcher from '../LanguageSwitcher';
 // import logoUrl from './logo-small.png';
 // import logoUrl2x from './logo-small@2x.png';
 import logo from './Group.svg'
+import MyLanguageSwitcher from '../MyLanguageSwitcher'
+import Info from '../Info'
 
 const messages = defineMessages({
   brand: {
@@ -70,18 +72,11 @@ class Header extends React.Component {
                                 з натурального каменю власноруч</span>
                     </div>
                     <div className={s.footer}>
-                        <div className={s.languageSwitcher}>
-                            <span>Укр</span>
-                            <span>/</span>
-                            <span>Рус</span>
-                        </div>
+                        <MyLanguageSwitcher />
                         <Link to="/" className={s.link}><div className={s.button}>Зв'язатись з нами</div></Link>
                     </div>
                 </div>
-                <div className={s.info}>
-
-                </div>
-
+                <Info />
             </div>
         </div>
     );

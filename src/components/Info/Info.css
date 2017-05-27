@@ -1,0 +1,90 @@
+/**
+ * React Starter Kit (https://www.reactstarterkit.com/)
+ *
+ * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+@import '../variables.css';
+
+/*.container {*/
+    /*margin: 0 auto;*/
+    /*padding: 20px 15px;*/
+    /*max-width: var(--max-content-width);*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+    /*padding-bottom: 124px;*/
+    /*height: auto;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*padding-left: 26px;*/
+/*}*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 26px;
+}
+
+.text__header {
+    font-family: 'Lora';
+    font-size: 36px;
+    color: #4F4F4F;
+}
+.text__contacts {
+    color: #4F4F4F;
+}
+.text__phone {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 24px;
+}
+.text__street {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.link {
+    border-bottom: 2px solid #3C3C43;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.link,
+.link:active,
+.link:visited {
+    color: #3C3C43;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #a8a8a8;
+    border-bottom: 2px solid #979176;
+}
+
+@media (max-width: 360px) {
+    .text__header {
+        font-size: 36px;
+    }
+    .text__phone {
+        font-size: 24px;
+    }
+
+    .text__street {
+        font-size: 16px;
+    }
+    .map{
+        display: none;
+    }
+    .container {
+        display: block;
+    }
+    .text{
+        padding: 0;
+    }
+}
