@@ -17,6 +17,7 @@ import s from './Layout.css';
 import Header from '../Header';
 import AboutUs from '../AboutUs';
 import Galery from '../Galery';
+import Catalog from '../Catalog'
 import ContactForm from '../ContactForm';
 import Footer from '../Footer';
 
@@ -31,6 +32,7 @@ class Layout extends React.Component {
       <div>
         <Header />
         {this.props.children}
+          <Catalog/>
         <AboutUs/>
         <Galery/>
         <ContactForm />
