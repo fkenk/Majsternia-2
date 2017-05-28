@@ -76,7 +76,7 @@ class Header extends React.Component {
                         <Link to="/" className={s.link}><div className={s.button}>Зв'язатись з нами</div></Link>
                     </div>
                 </div>
-                <Info />
+                <Info textHeader="Майстерня" hasImage={true}/>
             </div>
         </div>
     );
