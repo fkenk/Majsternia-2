@@ -4,9 +4,17 @@ import s from './MyLanguageSwitcher.css';
 
 
 class MyLanguageSwitcher extends React.Component {
+    findClass(){
+        if(this.props.hide){
+            return s.containerHide;
+        }
+        else{
+            return s.container;
+        }
+    }
     render() {
         return (
-            <div className={s.container}>
+            <div className={this.findClass()}>
                 <span>Укр</span>
                 <span>/</span>
                 <span>Рус</span>

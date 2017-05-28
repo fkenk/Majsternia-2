@@ -53,7 +53,7 @@ class Header extends React.Component {
                                 з натурального каменю власноруч</span>
                     </div>
                     <div className={s.footer}>
-                        <MyLanguageSwitcher />
+                        <MyLanguageSwitcher hide={true} />
                         <Link to="/" className={s.link}><div className={s.button}>Зв'язатись з нами</div></Link>
                     </div>
                 </div>
