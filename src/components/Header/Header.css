@@ -78,5 +78,9 @@
   .statement{
     font-size: 31px;
   }}
-
+@media (max-width: 1181px){
+  .sidebar{
+    width: 100%;
+  }
+}
 
