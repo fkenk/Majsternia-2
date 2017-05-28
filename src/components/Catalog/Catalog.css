@@ -6,7 +6,7 @@
   max-width: var(--max-content-width);
   margin-top: 120px;
   margin-bottom: 168px;
-  width: 59.898%;
+  width: 61.755%;
 }
 .text__header {
   font-family: 'Lora';
@@ -19,7 +19,8 @@
   flex-direction: column;
 }
 .info{
-  width: 28.9%;
+  width: 25.853%;
+  margin-right: 59px;
 
 }
 .names span{
@@ -47,8 +48,8 @@
   background-color: #3C3C43;
 }
 .content{
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
 }
