@@ -11,6 +11,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 import { Provider as ReduxProvider } from 'react-redux';
+import Reset from './Reset';
+
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -90,6 +92,10 @@ class App extends React.PureComponent {
     this.intl = (state && state.intl) || {};
     const { initialNow, locale, messages } = this.intl;
     const localeMessages = (messages && messages[locale]) || {};
+
+    // let styles = React.renderToStaticMarkup(<Reset />);
+    // document.head.insertAdjacentHTML('beforeEnd', styles);
+
     return (
       <IntlProvider
         initialNow={initialNow}

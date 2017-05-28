@@ -41,25 +41,6 @@ const messages = defineMessages({
 class Header extends React.Component {
   render() {
     return (
-      // <div className={s.root}>
-      //   <div className={s.container}>
-      //     <Navigation />
-      //     <Link className={s.brand} to="/">
-      //       <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} width="38" height="38" alt="React" />
-      //       <span className={s.brandTxt}>
-      //         <FormattedMessage {...messages.brand} />
-      //       </span>
-      //     </Link>
-      //     <LanguageSwitcher />
-      //     <div className={s.banner}>
-      //       <h1 className={s.bannerTitle}>
-      //         <FormattedMessage {...messages.bannerTitle} />
-      //       </h1>
-      //       <FormattedMessage tagName="p" {...messages.bannerDesc} />
-      //     </div>
-      //   </div>
-      // </div>
-        
         <div className={s.container}>
             <div className={s.logo}>
                     <img src={logo} alt="Here is logo"></img>
@@ -76,7 +57,7 @@ class Header extends React.Component {
                         <Link to="/" className={s.link}><div className={s.button}>Зв'язатись з нами</div></Link>
                     </div>
                 </div>
-                <Info textHeader="Майстерня" hasImage={true}/>
+                <Info textHeader="Майстерня" hasImage={true} hide={true}/>
             </div>
         </div>
     );

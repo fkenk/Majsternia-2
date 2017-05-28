@@ -18,10 +18,19 @@ import classNames from 'classnames';
 import logo from '../Header/Group.svg';
 
 class Info extends React.Component {
-    render() {
 
+    findClass(){
+        if(this.props.hide){
+            return s.containerHide;
+        }
+        else{
+            return s.container;
+        }
+    }
+
+    render() {
         return (
-            <div className={s.container}>
+                <div className={this.findClass()}>
                     <div className={s.header}>
                         {
                             this.props.hasImage && <img src={logo} alt="Here is logo"></img>
@@ -43,5 +52,4 @@ class Info extends React.Component {
         );
     }
 }
-
 export default withStyles(s)(Info);
