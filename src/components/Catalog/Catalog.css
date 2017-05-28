@@ -19,7 +19,7 @@
   flex-direction: column;
 }
 .info{
-  width: 25.853%;
+  width: 220px;
   margin-right: 59px;
 
 }
@@ -31,15 +31,17 @@
 }
 .names span:first-child{
   color: #3C3C43;
+  font-weight: 700;
 }
 .button {
   border: 2px solid #3C3C43;
   color: #3C3C43;
-  padding: 13.5px 30px;
+  padding: 12px 15px;
   /*margin-top: 20px;*/
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 20px;
+  width: 220px;
 }
 
 .button:hover {
@@ -60,4 +62,24 @@
 }
 .link {
   text-decoration: none;
+}
+@media (max-width: 1378px){
+  .container h2{
+    text-align: center;
+    margin-left: 0px;
+  }
+  .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width:100%;
+  }
+}
+@media (max-width: 900px){
+  .container{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+  }
 }
