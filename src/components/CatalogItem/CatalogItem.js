@@ -14,11 +14,11 @@ import Link from '../Link';
 
 class CatalogItem extends React.Component {
     findClass(){
-        if(this.props.hide){
-            return s.small;
+        if(this.props.size=="big"){
+            return s.big;
         }
         else{
-            return s.big;
+            return s.small;
         }
     }
 
@@ -26,7 +26,9 @@ class CatalogItem extends React.Component {
         return (
         <div className={s.container}>
             <img src={this.props.img} alt="Image" className={this.findClass()}/>
-            <Link className={s.link} to="/">{this.props.text}</Link>
+            <div>
+                <Link className={s.link} to="/">{this.props.text}</Link>
+            </div>
         </div>
     );
   }
