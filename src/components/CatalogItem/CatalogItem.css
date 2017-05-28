@@ -1,0 +1,38 @@
+
+@import '../variables.css';
+
+.container{
+  display: flex;
+  flex-direction: column;
+
+}
+.link {
+  border-bottom: 2px solid #3C3C43;
+  margin-right: 5%;
+  white-space: nowrap;
+  padding-bottom: 5px;
+}
+
+.link,
+.link:active,
+.link:visited {
+  color: #3C3C43;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #a8a8a8;
+  border-bottom: 2px solid #979176;
+}
+
+.big,.small{
+  width: 295px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.big{
+  height:405px;
+}
+.small{
+  height:266px;
+}

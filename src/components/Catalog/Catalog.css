@@ -19,7 +19,7 @@
   flex-direction: column;
 }
 .info{
-  width: 26.15%;
+  width: 28.9%;
 
 }
 .names span{
@@ -48,6 +48,7 @@
 }
 .content{
   flex-wrap: wrap;
+  width: 100%;
 }
 .names{
   width: 100%;

@@ -1,0 +1,6 @@
+{
+  "name": "CatalogItem",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CatalogItem.js"
+}
