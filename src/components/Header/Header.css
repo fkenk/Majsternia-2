@@ -4,7 +4,7 @@
 .container{
   margin: 0 auto;
   max-width: var(--max-content-width);
-  margin-top: 44px;
+  margin-top: 62px;
   margin-bottom: 40px;
   width: 100%;
   padding: 0 20px;
@@ -22,6 +22,9 @@
   font-size: 36px;
   color: #4F4F4F;
   margin-bottom: 40px;
+}
+.logo img{
+  margin-bottom: 32.38px;
 }
 .header__content{
   width:100%;
@@ -93,3 +96,43 @@
   }
 }
 
+.header{
+  display: none;
+  width: 100%;
+  padding: 24px 24px;
+  justify-content: space-between;
+}
+.header span{
+  font-family: Lora;
+  font-weight: 700;
+  font-size: 24px;
+}
+.callMenu{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.line{
+  margin-bottom: 5px;
+}
+.line:last-child{
+  margin-bottom: 0;
+}
+.line{
+  width: 18px;
+  background-color: #3C3C43;
+  height: 2px;
+}
+
+@media (max-width: 800px) {
+  .header{
+    display: flex;
+  }
+  .container{
+    margin-top: 0;
+  }
+  .logo{
+    padding: 15.9% 5.555%;
+    margin: 0;
+  }
+}
