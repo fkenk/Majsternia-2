@@ -64,18 +64,6 @@
 .link {
   text-decoration: none;
 }
-@media (max-width: 1378px){
-  .container h2{
-    text-align: center;
-    margin-left: 0px;
-  }
-  .content{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width:100%;
-  }
-}
 @media (max-width: 900px){
   .container{
     width: 100%;
@@ -86,5 +74,10 @@
   .content{
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .container h2{
+  text-align: center;
+  margin-left: 0px;
   }
 }
