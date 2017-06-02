@@ -4,7 +4,6 @@
 .container{
   display: flex;
   flex-direction: column;
-
 }
 .container div{
   width: 50%;
@@ -35,7 +34,20 @@
 }
 .big{
   width:405px;
+  margin: 20px 0;
+  margin-right: 20px;
 }
 .small{
   width:266px;
+}
+@media (max-width: 900px){
+  .container:not(:nth-child(2)){
+      display:none;
+  }
+  .small,.big{
+    margin-right: 0;
+  }
+  .container{
+    overflow: hidden;
+  }
 }

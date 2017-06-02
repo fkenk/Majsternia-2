@@ -38,6 +38,14 @@ class Header extends React.Component {
   render() {
     return (
         <div className={s.container}>
+            <div className={s.header}>
+                <span>Майстерня</span>
+                <div className={s.callMenu}>
+                    <div className={s.line}></div>
+                    <div className={s.line}></div>
+                    <div className={s.line}></div>
+                </div>
+            </div>
             <div className={s.logo}>
                     <img src={logo} alt="Here is logo"></img>
                     <span>Майстерня</span>
