@@ -6,7 +6,38 @@ import Link from '../Link';
 import img1 from './img1.jpg'
 import img2 from './img2.jpg'
 
-
+const Catalog = [
+  {
+    src: img1,
+    alt: 'abstract',
+    text: '#onyx #m-selection'
+  },
+  {
+    src: img2,
+    alt: 'abstract',
+    text: '#3d #randomy'
+  },
+  {
+    src: img1,
+    alt: 'abstract',
+    text: '#onyx #m-selection'
+  },
+  {
+    src: img1,
+    alt: 'abstract',
+    text: '#onyx #m-selection'
+  },
+  {
+    src: img1,
+    alt: 'abstract',
+    text: '#onyx #m-selection'
+  },
+  {
+    src: img1,
+    alt: 'abstract',
+    text: '#onyx #m-selection'
+  },
+];
 class Gallery extends React.Component {
   render() {
     return (
@@ -16,34 +47,19 @@ class Gallery extends React.Component {
           <p className={s.text__content}>Фото проектів з нашого <b>instagram</b>.</p>
         </div>
         <div className={s.gallery}>
-          <div className={s.gallery__item}>
-            <img className={s.img} src={img1} alt=""></img>
-            <p className={s.gallery__text}>#onyx #m-selection</p>
-          </div>
-          <div className={s.gallery__item}>
-            <img className={s.img} src={img2} alt=""></img>
-            <p className={s.gallery__text}>#3d #randomy</p>
-          </div>
-          <div className={s.gallery__item}>
-            <img className={s.img} src={img1} alt=""></img>
-            <p className={s.gallery__text}>#onyx #m-selection</p>
-          </div>
-          <div className={s.gallery__item}>
-            <img className={s.img} src={img1} alt=""></img>
-            <p className={s.gallery__text}>#onyx #m-selection</p>
-          </div>
-          <div className={s.gallery__item}>
-            <img className={s.img} src={img1} alt=""></img>
-            <p className={s.gallery__text}>#onyx #m-selection</p>
-          </div>
-          <div className={s.gallery__item}>
-            <img className={s.img} src={img1} alt=""></img>
-            <p className={s.gallery__text}>#onyx #m-selection</p>
-          </div>
+          {
+            Catalog.map(e =>
+              <div className={s.gallery__item}>
+                <div className={s.img}>
+                  <img src={e.src} alt={e.alt}></img>
+                </div>
+                <p className={s.gallery__text}>{e.text}</p>
+              </div>
+            )
+          }
         </div>
         <Link to="/" className={s.link}><div className={s.button}>Всі проекти</div></Link>
       </div>
-
     );
   }
 }
