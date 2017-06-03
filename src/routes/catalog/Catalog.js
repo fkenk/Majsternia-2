@@ -9,9 +9,6 @@
 
 import React from 'react';
 import Header from '../../components/Header';
-import Catalog from '../../components/Catalog';
-import AboutUs from '../../components/AboutUs';
-import Galery from '../../components/Galery';
 import ContactForm from '../../components/ContactForm';
 import Footer from '../../components/Footer';
 
@@ -22,9 +19,6 @@ export default class Home extends React.Component {
     return (
       <div >
         <Header />
-        <Catalog/>
-        <AboutUs/>
-        <Galery/>
         <ContactForm />
         <Footer />
       </div>
