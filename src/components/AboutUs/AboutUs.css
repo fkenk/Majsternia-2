@@ -17,17 +17,23 @@
   font-family: 'Lora';
   font-size: 48px;
   color: #4F4F4F;
+  padding: 20px 0 40px 0px;
 }
 
 .text__content {
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 20px;
+  padding-bottom: 20px;
+}
+.text__content p {
+  padding-bottom: 20px;
 }
 .text__redirect {
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 20px;
+  display: flex;
 }
 .img {
   height: 535px;
