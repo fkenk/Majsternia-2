@@ -8,19 +8,17 @@
  */
 
 import React from 'react';
+import Catalog from './Catalog';
 import Layout from '../../components/Layout';
-import Login from './Login';
-
-const title = 'Log In';
 
 export default {
 
-  path: '/login',
+  path: '/catalog',
 
   action() {
     return {
-      title,
-      component: <Layout><Login title={title} /></Layout>,
+      title: 'Catalog',
+      component: <Layout><Catalog /></Layout>,
     };
   },
 
