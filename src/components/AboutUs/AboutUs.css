@@ -40,6 +40,13 @@
   width: 441px;
   margin-left: 5.583756345177665%;
   margin-right: 2.90065264684554%;
+  overflow: hidden;
+}
+.img img {
+  transition: all 0.3s;
+}
+.img:hover img {
+  transform: scale(1.2);
 }
 .link {
   border-bottom: 2px solid #3C3C43;
