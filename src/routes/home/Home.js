@@ -21,7 +21,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div >
-        <Header />
+        <Header type="home" />
         <Catalog/>
         <AboutUs/>
         <Galery/>
