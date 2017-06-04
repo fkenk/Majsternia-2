@@ -152,7 +152,7 @@ class CatalogRouteItem  extends React.Component {
 
                                 }else{
                                     return(
-                                        <div className={s.column}>
+                                        <div className={s.column} key={index/10}>
                                             {
                                                 PICTURES[index].map(function (el) {
                                                    return <img

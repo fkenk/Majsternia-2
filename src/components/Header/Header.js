@@ -149,7 +149,7 @@ const Header = (props) => {
                 <span className={s2.text__place}>Доставка по Україні</span>
               </div>
 
-              <Link to="/" classNames={s.link}>
+              <Link to="/" className={s.link}>
                 <div className={s2.button}>Зв'язатись з нами</div>
               </Link>
               <MyLanguageSwitcher hide={true}/>

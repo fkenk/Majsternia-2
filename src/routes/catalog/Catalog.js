@@ -35,18 +35,7 @@ var CatalogItems = [
     }
 ]
 
-class Home extends React.Component {
-    getInitialState() {
-        return {
-            selectedItem: null
-        };
-    }
-    clickHandler(idx) {
-        this.setState({selectedItem: idx});
-    }
-
-  render() {
-    return (
+const Home = ()=>
       <div >
         <Header />
           <div className={s.container}>
@@ -66,8 +55,5 @@ class Home extends React.Component {
         <ContactForm />
         <Footer />
       </div>
-    );
-  }
-}
 
 export default withStyles(s)(Home);

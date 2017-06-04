@@ -2,12 +2,12 @@
 
 .container, .containerHide span{
     font-family: Roboto;
-    color: #c4c4c4;
+    font-weight:500;
 }
-.container, .containerHide span:last-child{
-    font-weight: 700;
-    color: #000000;
-}
+/*.container, .containerHide span:last-child{*/
+    /*font-weight: 700;*/
+    /*color: #000000;*/
+/*}*/
 @media (max-width: 360px) {
     .containerHide{
         display: none;
