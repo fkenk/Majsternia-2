@@ -1,10 +1,13 @@
 .container{
   display: flex;
-  justify-content: space-between;
   width: 100%;
+  margin-bottom: 60px;
+}
+.container:last-child{
+  margin-bottom: 0;
 }
 .content{
-  width: 64.421%;
+  width: 67.589%;
   display: flex;
   flex-direction: column;
 }
@@ -17,7 +20,6 @@
   width:100%;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 52px;
 }
 .filter span{
   margin-right: 10px;
@@ -29,4 +31,26 @@
 .title{
   font-size: 24px;
   line-height: 35px;
+  margin-right: 48px;
+  max-width: 333px;
+  width:100%;
+}
+.images{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:100%;
+}
+.image{
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.image:last-child{
+  margin-right:0;
 }

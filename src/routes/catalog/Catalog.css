@@ -12,12 +12,12 @@
 .container{
     margin: 0 auto;
     max-width: var(--max-content-width);
-    padding-left: 64px;
     margin-top: 56px;
-    margin-bottom: 160px;
+    margin-bottom: 120px;
     width:100%;
     display: flex;
     flex-direction: column;
+    padding-left: 64px;
 }
 .text__header {
     font-family: 'Lora';
