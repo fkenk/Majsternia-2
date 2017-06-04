@@ -10,7 +10,7 @@ import queryIntl from './intl.graphql';
 
 export function setLocale({ locale }) {
   return async (dispatch, getState, { client, history }) => {
-    dispatch({
+   /* dispatch({
       type: SET_LOCALE_START,
       payload: {
         locale,
@@ -21,8 +21,7 @@ export function setLocale({ locale }) {
       dispatch({
         type: SET_LOCALE_SUCCESS,
         payload: {
-          locale,
-          messages,
+          locale
         },
       });
 
@@ -42,7 +41,7 @@ export function setLocale({ locale }) {
       });
       return false;
     }
-
+*/
     return true;
   };
 }

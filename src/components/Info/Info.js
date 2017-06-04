@@ -8,6 +8,9 @@ import logo from '../Header/Group.svg';
 class Info extends React.Component {
 
     findClass(){
+        if(this.props.menu) {
+          return s.containerMenu;
+        }
         if(this.props.hide){
             return s.containerHide;
         }

@@ -1,9 +1,39 @@
 
 @import '../variables.css';
 
+
+bmBurgerButton {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 26px;
+  top: 28px;
+}
+
+.menuItems {
+  display: flex !important;
+  flex-direction: column;
+  align-items: baseline;
+  padding-left: 37px;
+  padding-top: 95px;
+  padding-right: 20px;
+}
+
+.menuFooter {
+  margin-top: 154px;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  padding-left: 37px;
+  background-color: #F9F0DD;
+  width: 100%;
+  display: flex !important;
+}
+
+
+
 .container{
   max-width: var(--max-content-width);
-  margin: 62px auto 40px;
+  margin: 0px auto;
   width: 100%;
   padding: 0 20px;
 }
@@ -100,16 +130,13 @@
   padding: 24px 24px;
   justify-content: space-between;
 }
-.header span{
+.headerLogo{
   font-family: Lora;
   font-weight: 700;
   font-size: 24px;
+  color: #4F4F4F;
 }
-.callMenu{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+
 .line{
   margin-bottom: 5px;
 }
@@ -121,9 +148,15 @@
   background-color: #3C3C43;
   height: 2px;
 }
+.callMenu {
+  display: none;
+}
 
 @media (max-width: 800px) {
   .header{
+    display: flex;
+  }
+  .callMenu {
     display: flex;
   }
   .container{
