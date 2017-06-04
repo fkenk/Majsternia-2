@@ -27,9 +27,11 @@ class Footer extends React.Component {
             <div className={s.text__phone}>+38 066 445 59 00</div>
             <div className={s.text__street}>м. Мукачево, вул. Переяславська, 1</div>
           </div>
-          <p><Link className={classNames(s.link)} to="/">Каталог продукції</Link></p>
-          <p><Link className={s.link} to="/">Про нас</Link></p>
-          <p><Link className={s.link} to="/">Наші роботи</Link></p>
+          <div className={s.text__links}>
+            <Link className={classNames(s.link)} to="/">Каталог продукції</Link>
+            <Link className={s.link} to="/">Про нас</Link>
+            <Link className={s.link} to="/">Наші роботи</Link>
+          </div>
         </div>
       </div>
     );
