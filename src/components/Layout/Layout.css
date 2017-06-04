@@ -41,11 +41,6 @@ ol, ul {
   list-style: none;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-
-}
-
 body {
   margin: 0;
 }
