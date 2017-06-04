@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 64px;
+    padding-right: 21px;
 }
 .text__header {
     font-family: 'Lora';
