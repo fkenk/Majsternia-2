@@ -6,17 +6,16 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
-
 @import '../variables.css';
 
 .container, .containerHide {
-    display: flex;
-    flex-direction: column;
-    padding-left: 40px;
-    padding-top: 96px;
-    justify-content: flex-start;
-    border: 2px solid #3C3C43;
-    width:29.151%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 96px;
+  justify-content: flex-start;
+  border: 2px solid #3C3C43;
+  width: 29.151%;
 }
 
 .containerMenu {
@@ -26,65 +25,72 @@
 }
 
 .text__header {
-    font-family: 'Lora';
-    font-size: 36px;
-    line-height: 48px;
-    color: #4F4F4F;
-    margin-top: 10px;
-    margin-bottom: 31px;
+  font-family: 'Lora';
+  font-size: 36px;
+  line-height: 48px;
+  color: #4F4F4F;
+  margin-top: 10px;
+  margin-bottom: 31px;
 }
+
 .text__contacts {
-    color: #4F4F4F;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  color: #4F4F4F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .text__phone {
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 24px;
-    margin-bottom: 5px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 5px;
 }
+
 .text__street {
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .link {
-    border-bottom: 2px solid #3C3C43;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 20px;
-    padding-bottom: 5px;
+  border-bottom: 2px solid #3C3C43;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 9px;
+  margin-top: 14px;
 }
 
 .link,
 .link:active,
 .link:visited {
-    color: #3C3C43;
-    text-decoration: none;
+  color: #3C3C43;
+  text-decoration: none;
 }
 
 .link:hover {
-    color: #a8a8a8;
-    border-bottom: 2px solid #979176;
+  color: #a8a8a8;
+  border-bottom: 2px solid #979176;
 }
-.header{
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 68px;
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 68px;
 }
-.header img{
-    height:133px;
-    width:48px;
-    margin-right: 20px;
+
+.header img {
+  height: 133px;
+  width: 48px;
+  margin-right: 20px;
 }
-.text{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width:80.243%;
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80.243%;
 }
 
 .footer {
@@ -92,29 +98,35 @@
   flex-direction: column;
   align-items: baseline;
 }
-@media (max-width: 360px) {
-    .text__header {
-        font-size: 36px;
-    }
-    .text__phone {
-        font-size: 24px;
-    }
 
-    .text__street {
-        font-size: 16px;
-    }
-    .map{
-        display: none;
-    }
-    .container {
-        display: block;
-    }
-    .text{
-        padding: 0;
-    }
+@media (max-width: 360px) {
+  .text__header {
+    font-size: 36px;
+  }
+
+  .text__phone {
+    font-size: 24px;
+  }
+
+  .text__street {
+    font-size: 16px;
+  }
+
+  .map {
+    display: none;
+  }
+
+  .container {
+    display: block;
+  }
+
+  .text {
+    padding: 0;
+  }
 }
-@media (max-width: 1181px){
-    .containerHide{
-        display: none;
-        }
+
+@media (max-width: 1181px) {
+  .containerHide {
+    display: none;
+  }
 }

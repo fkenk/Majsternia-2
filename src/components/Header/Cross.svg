@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>/close</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-9975 -1257)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 9975 1257L 10007 1257L 10007 1289L 9975 1289L 9975 1257Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="icon/close" clip-path="url(#clip-0)">
+<g id="Vector 2">
+<use xlink:href="#path0_stroke" transform="matrix(0.707107 0.707107 -0.619958 0.784635 9983 1265)" fill="#3C3C43"/>
+</g>
+<g id="Vector 2">
+<use xlink:href="#path0_stroke" transform="matrix(-0.707107 0.707107 0.619958 0.784635 9999 1265)" fill="#3C3C43"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 22.6274 -1L 0 -1L 0 1L 22.6274 1L 22.6274 -1Z"/>
+</defs>
+</svg>
