@@ -20,7 +20,6 @@
   color: #747880;
 }
 .filter{
-  width:100%;
   display: flex;
   justify-content: flex-start;
 }
@@ -61,4 +60,18 @@
   .content{
     width: 100%;
   }
+}
+@media (max-width: 988px) {
+  .images{
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .column:last-child img{
+    width: 480px;
+  }
+  .container, .content, .filter, .images{
+    display: flex;
+    justify-content: center;
+  }
+
 }

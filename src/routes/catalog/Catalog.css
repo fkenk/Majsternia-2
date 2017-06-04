@@ -27,6 +27,11 @@
     margin-bottom: 56px;
 }
 
-@media (max-width: 1345px) {
-
+@media (max-width: 982px) {
+    .container{
+        padding: 0 20px;
+    }
+    .text__header{
+        text-align: center;
+    }
 }
