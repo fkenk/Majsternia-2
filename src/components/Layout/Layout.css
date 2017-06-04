@@ -80,6 +80,9 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+li{
+  list-style-type: none;
+}
 
 /*
  * Remove the gap between audio, canvas, iframes,

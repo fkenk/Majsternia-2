@@ -1,0 +1,6 @@
+{
+  "name": "CatalogRouteItem",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CatalogRouteItem.js"
+}

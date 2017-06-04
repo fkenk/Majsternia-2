@@ -1,0 +1,32 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.content{
+  width: 64.421%;
+  display: flex;
+  flex-direction: column;
+}
+.line{
+  width:100%;
+  margin: 13px 0;
+  color: #747880;
+}
+.filter{
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 52px;
+}
+.filter span{
+  margin-right: 10px;
+  font-size: 16px;
+  color: #3C3C43;
+  line-height: 32px;
+  font-weight: 500;
+}
+.title{
+  font-size: 24px;
+  line-height: 35px;
+}

@@ -11,17 +11,62 @@ import React from 'react';
 import Header from '../../components/Header';
 import ContactForm from '../../components/ContactForm';
 import Footer from '../../components/Footer';
+import AboutUs from '../../components/AboutUs';
+import CatalogRouteItem from '../../components/CatalogRouteItem';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './Catalog.css';
 
 
-export default class Home extends React.Component {
+
+var CatalogItems = [
+    {
+        id: 1,
+        title: "Внутрішнє та зовнішнє оздоблення",
+        hasFilter: true
+    },
+    {
+        id: 2,
+        title: "Складні архітектурні вироби",
+        hasFilter: false
+    },{
+        id: 3,
+        title: "Садово-паркове мистецтво",
+        hasFilter: false
+    }
+]
+
+class Home extends React.Component {
+    getInitialState() {
+        return {
+            selectedItem: null
+        };
+    }
+    clickHandler(idx) {
+        this.setState({selectedItem: idx});
+    }
 
   render() {
     return (
       <div >
         <Header />
+          <div className={s.container}>
+              <h2 className={s.text__header}>Каталог продукції</h2>
+              {
+                  CatalogItems.map(function(el) {
+                      return <CatalogRouteItem
+                          key={el.id}
+                          title={el.title}
+                          hasFilter={el.hasFilter}
+                      />;
+                  })
+              }
+          </div>
+        <AboutUs/>
         <ContactForm />
         <Footer />
       </div>
     );
   }
 }
+
+export default withStyles(s)(Home);
