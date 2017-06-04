@@ -18,17 +18,6 @@ export function setLocale({ locale }) {
     });
 
     try {
-      // WARNING !!
-      // do not use client.networkInterface except you want skip Apollo store
-      // use client.query if you want benefit from Apollo caching mechanisms !!!!
-      const { data } = await client.networkInterface({
-        query: queryIntl,
-        variables: { locale },
-      });
-      const messages = data.intl.reduce((msgs, msg) => {
-        msgs[msg.id] = msg.message; // eslint-disable-line no-param-reassign
-        return msgs;
-      }, {});
       dispatch({
         type: SET_LOCALE_SUCCESS,
         payload: {

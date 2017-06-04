@@ -17,23 +17,36 @@
   font-family: 'Lora';
   font-size: 48px;
   color: #4F4F4F;
+  padding: 20px 0 40px 0px;
 }
 
 .text__content {
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 20px;
+  padding-bottom: 20px;
+}
+.text__content p {
+  padding-bottom: 20px;
 }
 .text__redirect {
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 20px;
+  display: flex;
 }
 .img {
   height: 535px;
   width: 441px;
   margin-left: 5.583756345177665%;
   margin-right: 2.90065264684554%;
+  overflow: hidden;
+}
+.img img {
+  transition: all 0.3s;
+}
+.img:hover img {
+  transform: scale(1.2);
 }
 .link {
   border-bottom: 2px solid #3C3C43;

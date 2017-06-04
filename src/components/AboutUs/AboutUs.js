@@ -8,7 +8,9 @@ class AboutUs extends React.Component {
   render() {
     return (
       <div className={s.container}>
-        <img className={s.img} src={img1} alt=""/>
+        <div className={s.img}>
+          <img src={img1} alt="about-us"/>
+        </div>
         <div className={s.text}>
           <h2 className={s.text__header}>Про нас</h2>
           <div className={s.text__content}>
