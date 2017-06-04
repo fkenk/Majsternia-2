@@ -20,8 +20,8 @@ export function setLocale({ locale }) {
     try {
       // WARNING !!
       // do not use client.networkInterface except you want skip Apollo store
-      // use client.query if you want benefit from Apollo caching mechanisms
-      const { data } = await client.networkInterface.query({
+      // use client.query if you want benefit from Apollo caching mechanisms !!!!
+      const { data } = await client.networkInterface({
         query: queryIntl,
         variables: { locale },
       });
