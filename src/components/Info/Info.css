@@ -19,6 +19,12 @@
     width:29.151%;
 }
 
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .text__header {
     font-family: 'Lora';
     font-size: 36px;
@@ -79,6 +85,12 @@
     flex-direction: column;
     justify-content: flex-start;
     width:80.243%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 @media (max-width: 360px) {
     .text__header {
