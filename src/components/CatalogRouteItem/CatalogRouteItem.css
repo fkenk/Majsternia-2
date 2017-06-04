@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 60px;
+}
+.container:last-child{
+  margin-bottom: 0;
 }
 .content{
   width: 64.421%;
@@ -17,7 +21,6 @@
   width:100%;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 52px;
 }
 .filter span{
   margin-right: 10px;
@@ -34,6 +37,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .column{
   display: flex;

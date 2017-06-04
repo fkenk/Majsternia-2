@@ -64,7 +64,7 @@ var PICTURES = [
         }
     ]
 ];
-var ProductsPictures = [
+var ROW_PICTURES = [
     [
         {
             id: 1,
@@ -167,8 +167,7 @@ class CatalogRouteItem  extends React.Component {
                                 }
                             })
                             :
-                                    ProductsPictures[index-1].map(function (el) {
-                                        console.log(ProductsPictures);
+                                    ROW_PICTURES[index-1].map(function (el) {
                                         return <img
                                             key={el.id}
                                             src={el.image}
