@@ -81,7 +81,7 @@ var ROW_PICTURES = [
         {
             id: 3,
             image: 'https://ucarecdn.com/01aa5187-93d4-4651-b4de-6866168b252e/99fa7bc0f523a32cd4126e64e51324061.jpg',
-            width: '357.97px',
+            width: '347.8px',
             height: "387px"
         }
     ],

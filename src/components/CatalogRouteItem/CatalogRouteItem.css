@@ -1,6 +1,5 @@
 .container{
   display: flex;
-  justify-content: space-between;
   width: 100%;
   margin-bottom: 60px;
 }
@@ -8,7 +7,7 @@
   margin-bottom: 0;
 }
 .content{
-  width: 64.421%;
+  width: 67.589%;
   display: flex;
   flex-direction: column;
 }
@@ -32,6 +31,9 @@
 .title{
   font-size: 24px;
   line-height: 35px;
+  margin-right: 48px;
+  max-width: 333px;
+  width:100%;
 }
 .images{
   width: 100%;
@@ -48,4 +50,7 @@
 .image{
   margin-bottom: 20px;
   margin-right: 20px;
+}
+.image:last-child{
+  margin-right:0;
 }
