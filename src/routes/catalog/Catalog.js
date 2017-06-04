@@ -57,7 +57,7 @@ class Home extends React.Component {
                           key={el.id}
                           title={el.title}
                           hasFilter={el.hasFilter}
-                          indexOfCatalogItem = {el.index}
+                          indexOfCatalogItem = {index}
                       />;
                   })
               }

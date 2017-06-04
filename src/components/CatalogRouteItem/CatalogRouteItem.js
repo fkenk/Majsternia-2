@@ -33,7 +33,7 @@ var PICTURES = [
         image: 'https://ucarecdn.com/68a993ed-d978-4ebc-90f7-a32997080c79/f56c44f794e0f85bdc41b8e8b194436c.jpg',
         width: '280px',
         height: "420px"
-        
+
     },[
         {
             id: 2,
@@ -64,6 +64,36 @@ var PICTURES = [
         }
     ]
 ];
+var ProductsPictures = [
+    [
+        {
+            id: 1,
+            image: 'https://ucarecdn.com/9708ec45-5613-498d-b762-1f4774a03786/5b7d0caff985918f2a4666da961485a4.jpg',
+            width: '208.81px',
+            height: "387px"
+        },
+        {
+            id: 2,
+            image: 'https://ucarecdn.com/fe87d38a-1cf2-4556-af68-f22eb434d78f/b55bdd83663cf72068daf7e146cdfdd21.jpg',
+            width: '283.39px',
+            height: "387px"
+        },
+        {
+            id: 3,
+            image: 'https://ucarecdn.com/01aa5187-93d4-4651-b4de-6866168b252e/99fa7bc0f523a32cd4126e64e51324061.jpg',
+            width: '357.97px',
+            height: "387px"
+        }
+    ],
+    [
+        {
+            id: 1,
+            image: 'https://ucarecdn.com/48b3949f-5ad5-4267-9c82-9868e57b5f5e/Group.jpg',
+            width: '880px',
+            height: "387px"
+        }
+    ]
+];
 
 class CatalogRouteItem  extends React.Component {
 
@@ -81,6 +111,7 @@ class CatalogRouteItem  extends React.Component {
 
     render() {
         const hasFilter = this.props.hasFilter;
+        const index = this.props.indexOfCatalogItem;
 
         return (
         <div className={s.container}>
@@ -106,34 +137,46 @@ class CatalogRouteItem  extends React.Component {
                 }
                 <div className={s.images}>
                     {
-                        PICTURES.map(function (el,index) {
-                            if(index==0){
-                               return <img
-                                                key={el.id}
-                                                src={el.image}
-                                                width={el.width}
-                                                height={el.height}
-                                                className={s.image}
-                                                alt="Here is img"/>
-
-                            }else{
-                                return(
-                                    <div className={s.column}>
-                                        {
-                                            PICTURES[index].map(function (el) {
-                                               return <img
+                        (index==0) ?
+                            PICTURES.map(function (el,index) {
+                                if(index==0){
+                                   return <img
                                                     key={el.id}
                                                     src={el.image}
                                                     width={el.width}
                                                     height={el.height}
                                                     className={s.image}
                                                     alt="Here is img"/>
-                                            })
-                                        }
-                                    </div>
-                                );
-                            }
-                        })
+
+                                }else{
+                                    return(
+                                        <div className={s.column}>
+                                            {
+                                                PICTURES[index].map(function (el) {
+                                                   return <img
+                                                        key={el.id}
+                                                        src={el.image}
+                                                        width={el.width}
+                                                        height={el.height}
+                                                        className={s.image}
+                                                        alt="Here is img"/>
+                                                })
+                                            }
+                                        </div>
+                                    );
+                                }
+                            })
+                            :
+                                    ProductsPictures[index-1].map(function (el) {
+                                        console.log(ProductsPictures);
+                                        return <img
+                                            key={el.id}
+                                            src={el.image}
+                                            width={el.width}
+                                            height={el.height}
+                                            className={s.image}
+                                            alt="Here is img"/>
+                                    })
                     }
                 </div>
             </div>
