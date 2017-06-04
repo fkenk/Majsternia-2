@@ -122,6 +122,7 @@ class CatalogRouteItem  extends React.Component {
                     hasFilter &&
                         <div className={s.filter}>
                         <span>Вид каменю: </span>
+                            <div className={s.liItems}>
                         {
                             filterItems.map(function (el, idx) {
                                 var is_selected = this.state.selectedItem == idx;
@@ -133,6 +134,7 @@ class CatalogRouteItem  extends React.Component {
                                 />;
                             }.bind(this))
                         }
+                                </div>
                         </div>
                 }
                 <div className={s.images}>

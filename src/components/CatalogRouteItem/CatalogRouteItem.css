@@ -22,6 +22,7 @@
 .filter{
   display: flex;
   justify-content: flex-start;
+  width: 100%;
 }
 .filter span{
   margin-right: 10px;
@@ -29,6 +30,12 @@
   color: #3C3C43;
   line-height: 32px;
   font-weight: 500;
+  width: 100%;
+}
+.liItems{
+  width:100%;
+  display: flex;
+  overflow: hidden;
 }
 .title{
   font-size: 24px;
