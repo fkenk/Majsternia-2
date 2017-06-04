@@ -48,8 +48,8 @@ class Gallery extends React.Component {
         </div>
         <div className={s.gallery}>
           {
-            Catalog.map(e =>
-              <div className={s.gallery__item}>
+            Catalog.map((e,i) =>
+              <div className={s.gallery__item} key={i}>
                 <div className={s.img}>
                   <img src={e.src} alt={e.alt}></img>
                 </div>
