@@ -52,11 +52,12 @@ class Home extends React.Component {
           <div className={s.container}>
               <h2 className={s.text__header}>Каталог продукції</h2>
               {
-                  CatalogItems.map(function(el) {
+                  CatalogItems.map(function(el,index) {
                       return <CatalogRouteItem
                           key={el.id}
                           title={el.title}
                           hasFilter={el.hasFilter}
+                          indexOfCatalogItem = {el.index}
                       />;
                   })
               }
