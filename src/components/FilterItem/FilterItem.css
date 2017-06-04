@@ -1,0 +1,13 @@
+
+@import '../variables.css';
+
+.filterItem{
+  margin-right: 10px;
+  font-size: 16px;
+  color: #3C3C43;
+  line-height: 32px;
+  font-weight: 500;
+}
+.filterItem:first-child{
+  color: #f76868;
+}
