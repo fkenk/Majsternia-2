@@ -33,6 +33,7 @@ var PICTURES = [
         image: 'https://ucarecdn.com/68a993ed-d978-4ebc-90f7-a32997080c79/f56c44f794e0f85bdc41b8e8b194436c.jpg',
         width: '280px',
         height: "420px"
+        
     },[
         {
             id: 2,
