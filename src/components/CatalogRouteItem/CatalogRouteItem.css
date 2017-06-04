@@ -78,5 +78,10 @@
   .container:last-child .content .images img{
     width: 100%;
   }
-
+}
+@media(max-width: 572px){
+  .images img, .column, .column img, .column:last-child img{
+    width: 100%;
+    margin-right: 0;
+  }
 }
