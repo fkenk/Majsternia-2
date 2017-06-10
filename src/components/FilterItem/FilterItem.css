@@ -11,3 +11,7 @@
 .filterItem:first-child{
   color: #f76868;
 }
+
+.link {
+  text-decoration: none;
+}
