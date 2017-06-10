@@ -10,44 +10,49 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './FilterItem.css';
+import Link from '../Link';
+
 
 class FilterItem extends React.Component {
-    propTypes: {
-        onClick: React.PropTypes.func.isRequired,
-        isSelected: React.PropTypes.bool
-        }
+  propTypes: {
+    onClick: React.PropTypes.func.isRequired,
+    isSelected: React.PropTypes.bool
+  }
 
-    static defaultProps = {
-        isSelected: false
+  static defaultProps = {
+    isSelected: false
+  }
+
+  constructor() {
+    super();
+    this.state = {
+      hover_flag: false
+    };
+  }
+
+  hoverEvent() {
+    this.setState({hover_flag: !this.state.hover_flag});
+
+
+  }
+
+  render() {
+    var aStyle = {
+      color: '#3C3C43'
+    };
+    if (this.props.isSelected || this.state.hover_flag) {
+      aStyle['color'] = '#f76868';
     }
-    
-    constructor() {
-        super();
-        this.state = {
-            hover_flag: false
-        };
-    }
 
-    hoverEvent() {
-        this.setState({hover_flag: !this.state.hover_flag});
-    }
-
-    render() {
-        var aStyle={
-            color: '#3C3C43'
-        };
-        if (this.props.isSelected || this.state.hover_flag) {
-            aStyle['color'] = '#f76868';
-        }
-
-        return (
-            <li
-                className={s.filterItem}
-                onClick={this.props.onClick}
-                onMouseEnter={this.hoverEvent.bind(this)}
-                onMouseLeave={this.hoverEvent.bind(this)}
-                style={aStyle}
-            >{this.props.name}</li>
+    return (
+      <li
+        className={s.filterItem}
+        onClick={this.props.onClick}
+        onMouseEnter={this.hoverEvent.bind(this)}
+        onMouseLeave={this.hoverEvent.bind(this)}
+        /* style={aStyle}*/
+      ><Link style={aStyle} to={this.props.link}>{this.props.name}</Link>
+      </li>
     );
   }
 }
