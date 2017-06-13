@@ -16,7 +16,7 @@ class CatalogItem extends React.Component {
   render() {
         return (
         <div className={s.container}>
-            <img src={this.props.img} alt="Image" className={this.findClass()}/>
+            <img src={this.props.img} alt={this.props.alt} className={this.findClass()}/>
             <div>
                 <Link className={s.link} to="/">{this.props.text}</Link>
             </div>
