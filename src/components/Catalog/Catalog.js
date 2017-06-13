@@ -5,6 +5,7 @@ import Link from '../Link';
 import CatalogItem from '../CatalogItem';
 
 
+
 const Photos = [
   {
     src: 'https://ucarecdn.com/7f5654d3-7b37-42a4-b66f-f974691437d5/1.jpg',
@@ -49,7 +50,7 @@ class Catalog extends React.Component {
             </Link>
           </div>
           {Photos.map((e, i) =>
-            <CatalogItem size={e.size} img={e.src} alt={e.alt} text={e.text}/>
+            <CatalogItem size={e.size} img={e.src} alt={e.alt} text={e.text} key={i}/>
           )}
         </div>
       </div>

@@ -2,33 +2,33 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './CatalogRouteItem.css';
 import FilterItem from '../FilterItem';
-import createHistory from 'history/createMemoryHistory'
+import history from '../../history'
 
 var filterItems = [
   {
     id: 1,
     name: "мармур",
-    link: "/catalog?stone=marble"
+    link: "/catalog?stone=0"
   }, {
     id: 2,
     name: "граніт",
-    link: "/catalog?stone=granite"
+    link: "/catalog?stone=1"
   }, {
     id: 3,
     name: "пісковик",
-    link: "/catalog?stone=sandstone"
+    link: "/catalog?stone=2"
   }, {
     id: 4,
     name: "вапняк",
-    link: "/catalog?stone=limestone"
+    link: "/catalog?stone=3"
   }, {
     id: 5,
     name: "квацит",
-    link: "/catalog?stone=quartzite"
+    link: "/catalog?stone=4"
   }, {
     id: 6,
     name: "онікс",
-    link: "/catalog?stone=onyx"
+    link: "/catalog?stone=5"
   }
 ];
 
@@ -106,17 +106,26 @@ class CatalogRouteItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedItem: 0
+      selectedItem: 1
     };
-    const history = createHistory();
-    const location = history.location;
-    console.log(location);
-    history.listen((location, action) => {
-      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-      console.log(`The last navigation action was ${action}`)
-    })
+
   }
 
+  componentWillMount() {
+    let location1 = history.location;
+
+    for (var key in location1) {
+      if(key == 'search') {
+        console.log(key + " = " + location1[key]);
+        if(location1[key] != "") {
+          console.log('asdadasds')
+          let kk = (location1[key]);
+          this.setState({selectedItem: kk.match(/\d+/)[0]});
+          console.log(kk);
+        }
+      }
+    }
+  }
   clickHandler(idx) {
     this.setState({selectedItem: idx});
   }
