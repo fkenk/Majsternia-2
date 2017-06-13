@@ -13,10 +13,10 @@ class ContactForm extends React.Component {
         </div>
         <div className={s.form}>
           <form >
-            <input type="text" name="name" placeholder="Ім'я" required/><br/>
-            <input type="tel" name="name" placeholder="Телефон" required/><br/>
-            <input type="email" name="name" placeholder="E-mail" required /><br/>
-            <textarea placeholder="Ваша ідея або питання" required></textarea>
+            <input type="text" name="userName" placeholder="Ім'я" required/><br/>
+            <input type="tel" name="userTel" placeholder="Телефон" required/><br/>
+            <input type="email" name="userEmail" placeholder="E-mail" required /><br/>
+            <textarea name="userMessage" placeholder="Ваша ідея або питання" required></textarea>
             <input type="submit" value="Зв'язатись" />
           </form>
         </div>

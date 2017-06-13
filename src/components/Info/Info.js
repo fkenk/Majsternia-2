@@ -18,7 +18,7 @@ class Info extends React.Component {
             return s.container;
         }
     }
-
+    
     render() {
         return (
                 <div className={this.findClass()}>
@@ -29,7 +29,7 @@ class Info extends React.Component {
                         <div className={s.text}>
                             <h3 className={s.text__header} >{this.props.textHeader}</h3>
                             <div className={s.text__contacts}>
-                                <span className={s.text__phone}>+38 066 445 59 00</span>
+                                <span className={s.text__phone}><Link to="tel:+380664455900">+38 066 445 59 00</Link></span>
                                 <span className={s.text__street}>м. Мукачево, вул. Переяславська, 1</span>
                             </div>
                         </div>
