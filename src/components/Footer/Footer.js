@@ -30,9 +30,9 @@ class Footer extends React.Component {
             <div className={s.text__street}>м. Мукачево, вул. Переяславська, 1</div>
           </div>
           <div className={s.text__links}>
-            <Link className={classNames(s.link)} to="/">Каталог продукції</Link>
-            <Link className={s.link} to="/">Про нас</Link>
-            <Link className={s.link} to="/">Наші роботи</Link>
+            <Link className={classNames(s.link)} to="/catalog">Каталог продукції</Link>
+            <Link className={s.link} to="/catalog">Про нас</Link>
+            <Link className={s.link} to="/catalog">Наші роботи</Link>
           </div>
         </div>
       </div>

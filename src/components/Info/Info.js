@@ -18,7 +18,7 @@ class Info extends React.Component {
             return s.container;
         }
     }
-    
+
     render() {
         return (
                 <div className={this.findClass()}>
@@ -36,8 +36,8 @@ class Info extends React.Component {
                     </div>
                     <div className={s.footer}>
                         <p><Link className={classNames(s.link)} to="/catalog">Каталог продукції</Link></p>
-                        <p><Link className={s.link} to="/">Про нас</Link></p>
-                        <p><Link className={s.link} to="/">Наші роботи</Link></p>
+                        <p><Link className={s.link} to="/catalog">Про нас</Link></p>
+                        <p><Link className={s.link} to="/catalog">Наші роботи</Link></p>
                     </div>
                 </div>
         );
