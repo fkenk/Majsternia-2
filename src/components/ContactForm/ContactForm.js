@@ -13,9 +13,9 @@ class ContactForm extends React.Component {
         </div>
         <div className={s.form}>
           <form >
-            <input type="text" name="userName" placeholder="Ім'я" required/><br/>
-            <input type="tel" name="userTel" placeholder="Телефон" required/><br/>
-            <input type="email" name="userEmail" placeholder="E-mail" required /><br/>
+            <input type="text" name="userName" placeholder="Ім'я" required/>
+            <input type="tel" name="userTel" placeholder="Телефон" required/>
+            <input type="email" name="userEmail" placeholder="E-mail" required />
             <textarea name="userMessage" placeholder="Ваша ідея або питання" required></textarea>
             <input type="submit" value="Зв'язатись" />
           </form>
