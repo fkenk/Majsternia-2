@@ -105,27 +105,10 @@ class CatalogRouteItem extends React.Component {
 
   constructor(props) {
     super(props);
+    let selectedItem = this.props.stoneId || 0;
     this.state = {
-      selectedItem: 0
-    };
-  }
-
-  componentWillMount() {
-    let location1 = history.location;
-    for (var key in location1) {
-      if(key == 'search') {
-        //console.log(key + " = " + location1[key]);
-        if(location1[key] != "") {
-          //console.log('asdadasds')
-          let kk = (location1[key]);
-          this.setState({selectedItem: kk.match(/\d+/)[0]});
-          return
-         // console.log(kk);
-        }
-        this.setState({selectedItem: 2});
-      }
+      selectedItem
     }
-    console.log('willMount')
   }
   clickHandler(idx) {
     this.setState({selectedItem: idx});
@@ -149,7 +132,7 @@ class CatalogRouteItem extends React.Component {
                 {
                   filterItems.map(function (el, idx) {
                     var is_selected = this.state.selectedItem == idx;
-                    console.log('selected = '+idx+' = '+ is_selected);
+                    //console.log('selected = ' + idx + ' = ' + is_selected);
                     return <FilterItem
                       key={el.id}
                       name={el.name}
