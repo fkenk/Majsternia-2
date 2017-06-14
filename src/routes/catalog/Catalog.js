@@ -69,6 +69,7 @@ class Catalog extends React.Component {
                 key={el.id}
                 title={el.title}
                 hasFilter={el.hasFilter}
+                selected={0}
                 indexOfCatalogItem={index}
               />;
             })

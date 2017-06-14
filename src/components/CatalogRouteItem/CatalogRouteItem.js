@@ -103,34 +103,36 @@ var ROW_PICTURES = [
 class CatalogRouteItem extends React.Component {
 
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      selectedItem: 1
+      selectedItem: 0
     };
-
   }
 
   componentWillMount() {
     let location1 = history.location;
-
     for (var key in location1) {
       if(key == 'search') {
-        console.log(key + " = " + location1[key]);
+        //console.log(key + " = " + location1[key]);
         if(location1[key] != "") {
-          console.log('asdadasds')
+          //console.log('asdadasds')
           let kk = (location1[key]);
           this.setState({selectedItem: kk.match(/\d+/)[0]});
-          console.log(kk);
+          return
+         // console.log(kk);
         }
+        this.setState({selectedItem: 2});
       }
     }
+    console.log('willMount')
   }
   clickHandler(idx) {
     this.setState({selectedItem: idx});
   }
 
   render() {
+    console.log('renderStart')
     const hasFilter = this.props.hasFilter;
     const index = this.props.indexOfCatalogItem;
 
@@ -147,6 +149,7 @@ class CatalogRouteItem extends React.Component {
                 {
                   filterItems.map(function (el, idx) {
                     var is_selected = this.state.selectedItem == idx;
+                    console.log('selected = '+idx+' = '+ is_selected);
                     return <FilterItem
                       key={el.id}
                       name={el.name}
