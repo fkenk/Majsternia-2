@@ -35,29 +35,8 @@ var CatalogItems = [
   }
 ]
 class Catalog extends React.Component {
- /* componentDidMount() {
-    console.log(this.props.context);
-    /*const history = createHistory();
-    const location = history.location;
-    console.log(location);
-    history.listen((location, action) => {
-      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-      console.log(`The last navigation action was ${action}`)
-    })
-    console.log('asdsadasdasdasd');*/
- /* }
-
- /* componentWillReceiveProps() {
-    //console.log(this.props.context.query.stone);
-    //let context  = this.props.context;
-
-    //const location = history.location.search;
-    //console.log(history);
-    //history.push('/catalog?stone=granite', { some: 'state' })
-    //console.log(history);
-  }*/
-
   render() {
+    let stoneId = this.props.context.query.stone;
     return (
       <div >
         <Header />
@@ -69,8 +48,8 @@ class Catalog extends React.Component {
                 key={el.id}
                 title={el.title}
                 hasFilter={el.hasFilter}
-                selected={0}
                 indexOfCatalogItem={index}
+                stoneId = {stoneId}
               />;
             })
           }
