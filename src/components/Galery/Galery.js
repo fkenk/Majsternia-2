@@ -3,37 +3,35 @@ import {defineMessages, FormattedMessage} from 'react-intl';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Galery.css';
 import Link from '../Link';
-import img1 from './img1.jpg'
-import img2 from './img2.jpg'
 
 const Catalog = [
   {
-    src: img1,
+    src: 'https://ucarecdn.com/2ff632ca-9d75-425c-89f1-1f0cef1ee201/img1.jpg',
     alt: 'abstract',
     text: '#onyx #m-selection'
   },
   {
-    src: img2,
+    src: 'https://ucarecdn.com/fe295e01-83c7-4b67-b684-5152af7afb8a/img2.jpg',
     alt: 'abstract',
     text: '#3d #randomy'
   },
   {
-    src: img1,
+    src: 'https://ucarecdn.com/2ff632ca-9d75-425c-89f1-1f0cef1ee201/img1.jpg',
     alt: 'abstract',
     text: '#onyx #m-selection'
   },
   {
-    src: img1,
+    src: 'https://ucarecdn.com/2ff632ca-9d75-425c-89f1-1f0cef1ee201/img1.jpg',
     alt: 'abstract',
     text: '#onyx #m-selection'
   },
   {
-    src: img1,
+    src: 'https://ucarecdn.com/2ff632ca-9d75-425c-89f1-1f0cef1ee201/img1.jpg',
     alt: 'abstract',
     text: '#onyx #m-selection'
   },
   {
-    src: img1,
+    src: 'https://ucarecdn.com/2ff632ca-9d75-425c-89f1-1f0cef1ee201/img1.jpg',
     alt: 'abstract',
     text: '#onyx #m-selection'
   },

@@ -15,10 +15,10 @@ export default {
 
   path: '/catalog',
 
-  action() {
+  action(context) {
     return {
       title: 'Catalog',
-      component: <Layout><Catalog /></Layout>,
+      component: <Layout><Catalog title={this.title}  context={context} /></Layout>,
     };
   },
 

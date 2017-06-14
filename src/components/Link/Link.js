@@ -39,6 +39,7 @@ class Link extends React.Component {
 
     event.preventDefault();
     history.push(this.props.to);
+    console.log(history);
   };
 
   render() {

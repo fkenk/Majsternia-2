@@ -2,33 +2,33 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './CatalogRouteItem.css';
 import FilterItem from '../FilterItem';
-import createHistory from 'history/createMemoryHistory'
+import history from '../../history'
 
 var filterItems = [
   {
     id: 1,
     name: "мармур",
-    link: "/catalog?stone=marble"
+    link: "/catalog?stone=0"
   }, {
     id: 2,
     name: "граніт",
-    link: "/catalog?stone=granite"
+    link: "/catalog?stone=1"
   }, {
     id: 3,
     name: "пісковик",
-    link: "/catalog?stone=sandstone"
+    link: "/catalog?stone=2"
   }, {
     id: 4,
     name: "вапняк",
-    link: "/catalog?stone=limestone"
+    link: "/catalog?stone=3"
   }, {
     id: 5,
     name: "квацит",
-    link: "/catalog?stone=quartzite"
+    link: "/catalog?stone=4"
   }, {
     id: 6,
     name: "онікс",
-    link: "/catalog?stone=onyx"
+    link: "/catalog?stone=5"
   }
 ];
 
@@ -103,25 +103,36 @@ var ROW_PICTURES = [
 class CatalogRouteItem extends React.Component {
 
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       selectedItem: 0
     };
-    const history = createHistory();
-    const location = history.location;
-    console.log(location);
-    history.listen((location, action) => {
-      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-      console.log(`The last navigation action was ${action}`)
-    })
   }
 
+  componentWillMount() {
+    let location1 = history.location;
+    for (var key in location1) {
+      if(key == 'search') {
+        //console.log(key + " = " + location1[key]);
+        if(location1[key] != "") {
+          //console.log('asdadasds')
+          let kk = (location1[key]);
+          this.setState({selectedItem: kk.match(/\d+/)[0]});
+          return
+         // console.log(kk);
+        }
+        this.setState({selectedItem: 2});
+      }
+    }
+    console.log('willMount')
+  }
   clickHandler(idx) {
     this.setState({selectedItem: idx});
   }
 
   render() {
+    console.log('renderStart')
     const hasFilter = this.props.hasFilter;
     const index = this.props.indexOfCatalogItem;
 
@@ -138,6 +149,7 @@ class CatalogRouteItem extends React.Component {
                 {
                   filterItems.map(function (el, idx) {
                     var is_selected = this.state.selectedItem == idx;
+                    console.log('selected = '+idx+' = '+ is_selected);
                     return <FilterItem
                       key={el.id}
                       name={el.name}

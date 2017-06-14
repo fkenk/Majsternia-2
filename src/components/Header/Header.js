@@ -44,7 +44,7 @@ var stylesBM = {
   },
   bmMenu: {
     background: '#ffffff',
-    'min-width': '360px',
+    'minWidth': '360px',
   },
   bmMorphShape: {
     fill: '#373a47'

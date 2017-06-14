@@ -10,7 +10,7 @@ import queryIntl from './intl.graphql';
 
 export function setLocale({ locale }) {
   return async (dispatch, getState, { client, history }) => {
-   /* dispatch({
+    dispatch({
       type: SET_LOCALE_START,
       payload: {
         locale,
@@ -18,10 +18,22 @@ export function setLocale({ locale }) {
     });
 
     try {
+      // WARNING !!
+      // do not use client.networkInterface except you want skip Apollo store
+      // use client.query if you want benefit from Apollo caching mechanisms
+      const { data } = await client.networkInterface.query({
+        query: queryIntl,
+        variables: { locale },
+      });
+      const messages = data.intl.reduce((msgs, msg) => {
+        msgs[msg.id] = msg.message; // eslint-disable-line no-param-reassign
+        return msgs;
+      }, {});
       dispatch({
         type: SET_LOCALE_SUCCESS,
         payload: {
-          locale
+          locale,
+          messages,
         },
       });
 
@@ -41,7 +53,7 @@ export function setLocale({ locale }) {
       });
       return false;
     }
-*/
+
     return true;
   };
 }
