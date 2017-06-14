@@ -22,9 +22,10 @@ import createFetch from './createFetch';
 import configureStore from './store/configureStore';
 import { updateMeta } from './DOMUtils';
 import history from './history';
-
+import createApolloClient from './core/createApolloClient';
 import WebFont from 'webfontloader';
 
+const apolloClient = createApolloClient();
 
 [en, cs].forEach(addLocaleData);
 
@@ -36,7 +37,7 @@ const fetch = createFetch({
 
 // Initialize a new Redux store
 // http://redux.js.org/docs/basics/UsageWithReact.html
-const store = configureStore(window.App.state, { fetch, history });
+const store = configureStore(window.App.state, { apolloClient, fetch, history });
 
 
 
@@ -58,6 +59,8 @@ const context = {
     const removeCss = styles.map(x => x._insertCss());
     return () => { removeCss.forEach(f => f()); };
   },
+  // For react-apollo
+  client: apolloClient,
   store,
   storeSubscription: null,
   // Universal HTTP client

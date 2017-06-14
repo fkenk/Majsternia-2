@@ -23,7 +23,7 @@ import PrettyError from 'pretty-error';
 import { IntlProvider } from 'react-intl';
 
 import './serverIntlPolyfill';
-//import createApolloClient from './core/createApolloClient';
+import createApolloClient from './core/createApolloClient';
 import App from './components/App';
 import Html from './components/Html';
 import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
@@ -86,12 +86,23 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   next(err);
 });
 
-
+//app.use(passport.initialize());
 
 if (__DEV__) {
   app.enable('trust proxy');
 }
-
+/*app.get('/login/facebook',
+  passport.authenticate('facebook', { scope: ['email', 'user_location'], session: false }),
+);
+app.get('/login/facebook/return',
+  passport.authenticate('facebook', { failureRedirect: '/login', session: false }),
+  (req, res) => {
+    const expiresIn = 60 * 60 * 24 * 180; // 180 days
+    const token = jwt.sign(req.user, config.auth.jwt.secret, { expiresIn });
+    res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: true });
+    res.redirect('/');
+  },
+);*/
 
 //
 // Register API middleware
@@ -110,9 +121,15 @@ app.use('/graphql', graphqlMiddleware);
 // -----------------------------------------------------------------------------
 app.get('*', async (req, res, next) => {
   try {
+    const apolloClient = createApolloClient({
+      schema,
+      rootValue: { request: req },
+    });
+
     const fetch = createFetch({
       baseUrl: config.api.serverUrl,
-      cookie: req.headers.cookie
+      cookie: req.headers.cookie,
+      apolloClient,
     });
 
     const initialState = {
@@ -121,6 +138,7 @@ app.get('*', async (req, res, next) => {
 
     const store = configureStore(initialState, {
       cookie: req.headers.cookie,
+      apolloClient,
       fetch,
       // I should not use `history` on server.. but how I do redirection? follow universal-router
       history: null,
@@ -138,7 +156,7 @@ app.get('*', async (req, res, next) => {
 
     const locale = req.language;
     await store.dispatch(setLocale({
-      locale
+      locale,
     }));
 
     const css = new Set();
@@ -155,7 +173,9 @@ app.get('*', async (req, res, next) => {
       fetch,
       // You can access redux through react-redux connect
       store,
-      storeSubscription: null
+      storeSubscription: null,
+      // Apollo Client for use with react-apollo
+      client: apolloClient,
     };
 
     const route = await router.resolve({
@@ -230,11 +250,11 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
       styles={[{ id: 'css', cssText: errorPageStyle._getCss() }]} // eslint-disable-line no-underscore-dangle
       app={{ lang: locale }}
     >
-      {ReactDOM.renderToString(
-        <IntlProvider locale={locale}>
-          <ErrorPageWithoutStyle error={err} />
-        </IntlProvider>,
-      )}
+    {ReactDOM.renderToString(
+      <IntlProvider locale={locale}>
+        <ErrorPageWithoutStyle error={err} />
+      </IntlProvider>,
+    )}
     </Html>,
   );
   res.status(err.status || 500);
