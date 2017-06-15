@@ -16,14 +16,14 @@ export default {
 
   path: '/',
 
-  async action(dispatch) {
+  async action(context) {
     //dispatch.store.dispatch(load.getPhotos());
 
     await Promise.all([
-      dispatch.store.dispatch(load.getData('about', 'GET_DATA_ABOUT_SUCCESS')),
-      dispatch.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS_SUCCESS')),
+      context.store.dispatch(load.getData('about', 'GET_DATA_ABOUT_SUCCESS')),
+      context.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS_SUCCESS')),
     ]);
-    console.log(dispatch.store.getState().aboutUs);
+    console.log(context.store.getState().aboutUs);
     return {
       title: 'Home',
       component: <Layout><Home /></Layout>,
