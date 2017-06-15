@@ -18,7 +18,7 @@ import s from './Catalog.css';
 import history from '../../history'
 
 
-var CatalogItems = [
+const CatalogItems = [
   {
     id: 1,
     title: "Внутрішнє та зовнішнє оздоблення",
