@@ -10,12 +10,20 @@
 import React from 'react';
 import Home from './Home';
 import Layout from '../../components/Layout';
+import * as load from '../../actions/PageLoad'
 
 export default {
 
   path: '/',
 
-  action() {
+  async action(context) {
+    //dispatch.store.dispatch(load.getPhotos());
+
+    await Promise.all([
+      context.store.dispatch(load.getData('about', 'GET_DATA_ABOUT_SUCCESS')),
+      context.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS_SUCCESS')),
+    ]);
+    console.log(context.store.getState().aboutUs);
     return {
       title: 'Home',
       component: <Layout><Home /></Layout>,

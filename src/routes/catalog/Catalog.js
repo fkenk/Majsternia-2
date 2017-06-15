@@ -15,8 +15,7 @@ import AboutUs from '../../components/AboutUs';
 import CatalogRouteItem from '../../components/CatalogRouteItem';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Catalog.css';
-import history from '../../history'
-
+import {connect} from 'react-redux'
 
 const CatalogItems = [
   {
@@ -37,6 +36,7 @@ const CatalogItems = [
 class Catalog extends React.Component {
   render() {
     let stoneId = this.props.context.query.stone;
+    const {aboutUs, projects} = this.props;
     return (
       <div >
         <Header />
@@ -54,11 +54,16 @@ class Catalog extends React.Component {
             })
           }
         </div>
-        <AboutUs/>
+        <AboutUs aboutUs={aboutUs}/>
         <ContactForm />
         <Footer />
       </div>)
   }
 }
+function mapStateToProps(state) {
+  return {
+    aboutUs: state.aboutUs,
+  }
+}
 
-export default withStyles(s)(Catalog);
+export default withStyles(s)(connect(mapStateToProps)(Catalog));

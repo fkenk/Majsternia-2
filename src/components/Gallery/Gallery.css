@@ -17,19 +17,24 @@
   align-items: center;
   padding: 120px 20px 156px;
 }
-
-.img {
+.imgParent {
   width: 320px;
   height: 320px;
-  cursor: pointer;
   overflow: hidden;
 }
-.img img {
-  transition: all 0.3s;
+.img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  background-position: center center;
+  transition: all 0.5s;
 }
-.img:hover img {
+
+.img:hover {
   transform: scale(1.2);
 }
+
 .text {
   text-align: center;
 }
