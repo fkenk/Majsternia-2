@@ -11,23 +11,37 @@ import React from 'react';
 import Header from '../../components/Header';
 import Catalog from '../../components/Catalog';
 import AboutUs from '../../components/AboutUs';
-import Galery from '../../components/Galery';
+import Gallery from '../../components/Gallery';
 import ContactForm from '../../components/ContactForm';
 import Footer from '../../components/Footer';
+import {connect} from 'react-redux'
 
 
-export default class Home extends React.Component {
+
+class Home extends React.Component {
 
   render() {
+
+    const {aboutUs, projects} = this.props;
+
     return (
       <div >
-        <Header type="home" />
+        <Header type="home"/>
         <Catalog/>
-        <AboutUs/>
-        <Galery/>
+        <AboutUs aboutUs={aboutUs}/>
+        <Gallery projects={projects}/>
         <ContactForm />
         <Footer />
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    aboutUs: state.aboutUs,
+    projects: state.projects
+  }
+}
+
+export  default  connect(mapStateToProps)(Home)
