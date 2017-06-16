@@ -15,14 +15,14 @@ import Gallery from '../../components/Gallery';
 import ContactForm from '../../components/ContactForm';
 import Footer from '../../components/Footer';
 import {connect} from 'react-redux'
-
-
-
+import { bindActionCreators } from 'redux'
+import * as load from '../../actions/apiAction'
 class Home extends React.Component {
 
   render() {
 
     const {aboutUs, projects} = this.props;
+    const { getData } = this.props.pageActions; //doesnt work???
 
     return (
       <div >
@@ -30,7 +30,7 @@ class Home extends React.Component {
         <Catalog/>
         <AboutUs aboutUs={aboutUs}/>
         <Gallery projects={projects}/>
-        <ContactForm />
+        <ContactForm context={this.props.context} getData={load.getData}/>
         <Footer />
       </div>
     );
@@ -43,5 +43,10 @@ function mapStateToProps(state) {
     projects: state.projects
   }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    pageActions: bindActionCreators(load, dispatch)
+  }
+}
 
-export  default  connect(mapStateToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -4,6 +4,7 @@ import runtime from './runtime';
 import intl from './intl';
 import aboutUs from './aboutUs';
 import projects from './projects';
+import contactForm from './contactForm';
 
 export default function createRootReducer() {
   return combineReducers({
@@ -11,6 +12,7 @@ export default function createRootReducer() {
     runtime,
     intl,
     aboutUs,
-    projects
+    projects,
+    contactForm,
   });
 }

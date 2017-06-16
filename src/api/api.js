@@ -67,6 +67,7 @@ export default class IndexService extends Api {
   }
 
   callback(body) {
+    console.log('called')
     return this.post('/callback/', body)
   }
 }

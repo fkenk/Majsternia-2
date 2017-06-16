@@ -16,6 +16,7 @@ import CatalogRouteItem from '../../components/CatalogRouteItem';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Catalog.css';
 import {connect} from 'react-redux'
+import * as load from '../../actions/apiAction'
 
 const CatalogItems = [
   {
@@ -55,7 +56,7 @@ class Catalog extends React.Component {
           }
         </div>
         <AboutUs aboutUs={aboutUs}/>
-        <ContactForm />
+        <ContactForm context={this.props.context} getData={load.getData} />
         <Footer />
       </div>)
   }
