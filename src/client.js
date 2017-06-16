@@ -15,8 +15,8 @@ import FastClick from 'fastclick';
 import queryString from 'query-string';
 import { createPath } from 'history/PathUtils';
 import { addLocaleData } from 'react-intl';
-import en from 'react-intl/locale-data/en';
-import cs from 'react-intl/locale-data/cs';
+import uk from 'react-intl/locale-data/uk';
+import ru from 'react-intl/locale-data/ru';
 import App from './components/App';
 import createFetch from './createFetch';
 import configureStore from './store/configureStore';
@@ -27,7 +27,7 @@ import WebFont from 'webfontloader';
 
 const apolloClient = createApolloClient();
 
-[en, cs].forEach(addLocaleData);
+[uk, ru].forEach(addLocaleData);
 
 /* eslint-disable global-require */
 
