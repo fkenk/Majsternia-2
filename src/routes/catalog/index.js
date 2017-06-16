@@ -10,7 +10,7 @@
 import React from 'react';
 import Catalog from './Catalog';
 import Layout from '../../components/Layout';
-import * as load from '../../actions/PageLoad'
+import * as load from '../../actions/apiAction'
 
 export default {
 

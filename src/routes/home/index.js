@@ -10,7 +10,7 @@
 import React from 'react';
 import Home from './Home';
 import Layout from '../../components/Layout';
-import * as load from '../../actions/PageLoad'
+import * as load from '../../actions/apiAction'
 
 export default {
 
@@ -26,7 +26,7 @@ export default {
     console.log(context.store.getState().aboutUs);
     return {
       title: 'Home',
-      component: <Layout><Home /></Layout>,
+      component: <Layout><Home context={context}/></Layout>,
     };
   },
 
