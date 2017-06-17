@@ -29,9 +29,10 @@ class ContactForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
-    formData.append('key1', 'value1');
-    formData.append('key2', 'value2');
-    console.log('asdsad')
+    formData.append('userName' , this.state.userName);
+    formData.append('userTel' , this.state.userTel);
+    formData.append('userEmail' , this.state.userEmail);
+    formData.append('userMessage' , this.state.userMessage);
     this.props.context.store.dispatch(this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData));
   }
 
