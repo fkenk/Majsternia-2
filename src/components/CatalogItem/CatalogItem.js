@@ -4,19 +4,12 @@ import s from './CatalogItem.css';
 import Link from '../Link';
 
 class CatalogItem extends React.Component {
-    findClass(){
-        if(this.props.size=="big"){
-            return s.big;
-        }
-        else{
-            return s.small;
-        }
-    }
-
   render() {
         return (
         <div className={s.container}>
-            <img src={this.props.img} alt={this.props.alt} className={this.findClass()}/>
+            <Link to="/">
+                <img src={this.props.img} alt={this.props.alt} className={this.props.size === "big" ? s.big : s.small}/>
+            </Link>
             <div>
                 <Link className={s.link} to="/">{this.props.text}</Link>
             </div>

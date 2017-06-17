@@ -18,7 +18,7 @@ import s from './Catalog.css';
 import {connect} from 'react-redux'
 import * as load from '../../actions/apiAction'
 
-var CatalogItems = [
+const CatalogItems = [
   {
     id: 1,
     title: "Внутрішнє та зовнішнє оздоблення",
