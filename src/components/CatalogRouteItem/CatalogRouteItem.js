@@ -2,7 +2,9 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './CatalogRouteItem.css';
 import FilterItem from '../FilterItem';
-import history from '../../history'
+import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as load from '../../actions/apiAction'
 
 var filterItems = [
   {
@@ -130,10 +132,10 @@ class CatalogRouteItem extends React.Component {
     this.setState({selectedItem: idx});
   }
 
-  render() {
-    console.log('renderStart')
-    const {hasFilter, indexOfCatalogItem: index} = this.props;
 
+  render() {
+    const {hasFilter, indexOfCatalogItem: index, data} = this.props;
+    
     return (
       <div className={s.container}>
         <span className={s.title}>{this.props.title}</span>
@@ -210,3 +212,4 @@ class CatalogRouteItem extends React.Component {
 }
 
 export default withStyles(s)(CatalogRouteItem);
+

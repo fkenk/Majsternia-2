@@ -16,6 +16,7 @@ import CatalogRouteItem from '../../components/CatalogRouteItem';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Catalog.css';
 import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
 import * as load from '../../actions/apiAction'
 
 const CatalogItems = [
@@ -37,7 +38,7 @@ const CatalogItems = [
 class Catalog extends React.Component {
   render() {
     let stoneId = this.props.context.query.stone;
-    const {aboutUs, projects} = this.props;
+    const {aboutUs,catalog} = this.props;
     return (
       <div >
         <Header />
@@ -51,6 +52,7 @@ class Catalog extends React.Component {
                 hasFilter={el.hasFilter}
                 indexOfCatalogItem={index}
                 stoneId = {stoneId}
+                data={catalog}
               />;
             })
           }
@@ -61,10 +63,18 @@ class Catalog extends React.Component {
       </div>)
   }
 }
-function mapStateToProps(state) {
+
+function mapDispatchToProps(dispatch) {
   return {
-    aboutUs: state.aboutUs,
+    pageActions: bindActionCreators(load, dispatch)
   }
 }
 
-export default withStyles(s)(connect(mapStateToProps)(Catalog));
+function mapStateToProps(state) {
+  return {
+    aboutUs: state.aboutUs,
+    catalog: state.catalog
+  }
+}
+
+export default withStyles(s)(connect(mapStateToProps,mapDispatchToProps)(Catalog));

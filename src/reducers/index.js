@@ -5,6 +5,7 @@ import intl from './intl';
 import aboutUs from './aboutUs';
 import projects from './projects';
 import contactForm from './contactForm';
+import catalog from './catalog'
 
 export default function createRootReducer() {
   return combineReducers({
@@ -14,5 +15,6 @@ export default function createRootReducer() {
     aboutUs,
     projects,
     contactForm,
+    catalog
   });
 }
