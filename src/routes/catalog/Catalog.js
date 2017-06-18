@@ -38,7 +38,7 @@ const CatalogItems = [
 class Catalog extends React.Component {
   render() {
     let stoneId = this.props.context.query.stone;
-    const {aboutUs,catalog} = this.props;
+    const {aboutUs} = this.props;
     return (
       <div >
         <Header />
@@ -52,7 +52,6 @@ class Catalog extends React.Component {
                 hasFilter={el.hasFilter}
                 indexOfCatalogItem={index}
                 stoneId = {stoneId}
-                data={catalog}
               />;
             })
           }
@@ -72,8 +71,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    aboutUs: state.aboutUs,
-    catalog: state.catalog
+    aboutUs: state.aboutUs
   }
 }
 

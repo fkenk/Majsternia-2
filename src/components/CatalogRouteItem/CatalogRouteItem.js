@@ -134,8 +134,9 @@ class CatalogRouteItem extends React.Component {
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index, data} = this.props;
-    
+    const {hasFilter, indexOfCatalogItem: index,decoration,park,architecture} = this.props;
+    console.log(park);
+
     return (
       <div className={s.container}>
         <span className={s.title}>{this.props.title}</span>
@@ -210,6 +211,18 @@ class CatalogRouteItem extends React.Component {
     );
   }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    pageActions: bindActionCreators(load, dispatch)
+  }
+}
 
-export default withStyles(s)(CatalogRouteItem);
+function mapStateToProps(state) {
+  return {
+    decoration: state.decoration,
+    architecture: state.architecture,
+    park: state.park
+  }
+}
+export default withStyles(s)(connect(mapStateToProps,mapDispatchToProps)(CatalogRouteItem));
 

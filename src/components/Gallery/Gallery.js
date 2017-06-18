@@ -7,7 +7,7 @@ import Link from '../Link';
 class Gallery extends React.Component {
   render() {
     const {data} = this.props.projects;
-      // console.log("projects : "+data);
+      //console.log("projects : "+data);
     return (
       <div className={s.container}>
         <div className={s.text}>

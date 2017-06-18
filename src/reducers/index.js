@@ -5,7 +5,10 @@ import intl from './intl';
 import aboutUs from './aboutUs';
 import projects from './projects';
 import contactForm from './contactForm';
-import catalog from './catalog'
+import architecture from './architecture';
+import park from './park';
+import decoration from './decoration';
+
 
 export default function createRootReducer() {
   return combineReducers({
@@ -15,6 +18,8 @@ export default function createRootReducer() {
     aboutUs,
     projects,
     contactForm,
-    catalog
+    architecture,
+    park,
+    decoration
   });
 }
