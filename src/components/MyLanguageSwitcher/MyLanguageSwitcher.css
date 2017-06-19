@@ -3,6 +3,7 @@
 .container, .containerHide span{
     font-family: Roboto;
     font-weight:500;
+    cursor: pointer;
 }
 /*.container, .containerHide span:last-child{*/
     /*font-weight: 700;*/

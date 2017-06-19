@@ -7,7 +7,7 @@ class MyLanguageSwitcher extends React.Component {
     constructor() {
         super();
         this.state = {
-            active: 1
+            active: 0
         };
     }
     toggle(position){

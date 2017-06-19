@@ -3,7 +3,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './CatalogRouteItem.css';
 import FilterItem from '../FilterItem';
 import {connect} from 'react-redux'
-import { bindActionCreators } from 'redux'
+import {bindActionCreators} from 'redux'
 import * as load from '../../actions/apiAction'
 
 var filterItems = [
@@ -86,7 +86,7 @@ const ROW_PICTURES = [
       height: "387px"
     },
     {
-      id:3,
+      id: 3,
       image: 'https://ucarecdn.com/01aa5187-93d4-4651-b4de-6866168b252e/99fa7bc0f523a32cd4126e64e51324061.jpg',
       width: '347.8px',
       height: "387px"
@@ -128,6 +128,7 @@ class CatalogRouteItem extends React.Component {
       selectedItem
     }
   }
+
   clickHandler(idx) {
     console.log(idx);
     this.setState({selectedItem: idx});
@@ -136,7 +137,7 @@ class CatalogRouteItem extends React.Component {
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index,decoration,park,architecture} = this.props;
+    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture} = this.props;
     //const{getImages} = this.props.load;
 
     return (
@@ -167,44 +168,44 @@ class CatalogRouteItem extends React.Component {
           <div className={s.images}>
             {
               (index == 0) ?
-                  PICTURES.map(function (el, index) {
-                    if (index == 0) {
-                      return <img
-                          key={el.id}
-                          src={el.image}
-                          width={el.width}
-                          height={el.height}
-                          className={s.image}
-                          alt="Here is img"/>
-
-                    } else {
-                      return (
-                          <div className={s.column} key={index / 10}>
-                            {
-                              PICTURES[index].map(function (el) {
-                                return <img
-                                    key={el.id}
-                                    src={el.image}
-                                    width={el.width}
-                                    height={el.height}
-                                    className={s.image}
-                                    alt="Here is img"/>
-                              })
-                            }
-                          </div>
-                      );
-                    }
-                  })
-                  :
-                  ROW_PICTURES[index - 1].map(function (el) {
+                PICTURES.map(function (el, index) {
+                  if (index == 0) {
                     return <img
-                        key={el.id}
-                        src={el.image}
-                        width={el.width}
-                        height={el.height}
-                        className={s.image}
-                        alt="Here is img"/>
-                  })
+                      key={el.id}
+                      src={el.image}
+                      width={el.width}
+                      height={el.height}
+                      className={s.image}
+                      alt="Here is img"/>
+
+                  } else {
+                    return (
+                      <div className={s.column} key={index / 10}>
+                        {
+                          PICTURES[index].map(function (el) {
+                            return <img
+                              key={el.id}
+                              src={el.image}
+                              width={el.width}
+                              height={el.height}
+                              className={s.image}
+                              alt="Here is img"/>
+                          })
+                        }
+                      </div>
+                    );
+                  }
+                })
+                :
+                ROW_PICTURES[index - 1].map(function (el) {
+                  return <img
+                    key={el.id}
+                    src={el.image}
+                    width={el.width}
+                    height={el.height}
+                    className={s.image}
+                    alt="Here is img"/>
+                })
             }
           </div>
         </div>
@@ -225,5 +226,5 @@ function mapStateToProps(state) {
     park: state.park
   }
 }
-export default withStyles(s)(connect(mapStateToProps,mapDispatchToProps)(CatalogRouteItem));
+export default withStyles(s)(connect(mapStateToProps, mapDispatchToProps)(CatalogRouteItem));
 

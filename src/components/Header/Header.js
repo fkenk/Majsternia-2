@@ -12,31 +12,13 @@ import Info from '../Info'
 import Menu from 'react-burger-menu/lib/menus/slide'
 
 
-const messages = defineMessages({
-  brand: {
-    id: 'header.brand',
-    defaultMessage: 'Your Company Bsdfsdrand',
-    description: 'Brand name displayed in header',
-  },
-  bannerTitle: {
-    id: 'header.banner.title',
-    defaultMessage: 'React',
-    description: 'Title in page header',
-  },
-  bannerDesc: {
-    id: 'header.banner.desc',
-    defaultMessage: 'Complex web apps made easy',
-    description: 'Description in header',
-  },
-});
-
 var stylesBM = {
   bmBurgerButton: {
     position: 'absolute',
     width: '18px',
     height: '30px',
     right: '26px',
-    top: '28px',
+    top: '24px',
   },
   bmCrossButton: {
     height: '32px',
@@ -113,7 +95,7 @@ const Header = (props) => {
       </div >
     )
   } else {
-    stylesBM.bmBurgerButton.top = '34px';
+    stylesBM.bmBurgerButton.top = '28px';
     return (
       <div>
         <div className={s2.callMenu}>

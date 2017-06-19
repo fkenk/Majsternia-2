@@ -20,7 +20,6 @@
     /*padding-left: 64px;*/
     /*padding-right: 21px;*/
     padding: 0 18px;
-    max-width: 1274px;
 }
 .text__header {
     font-family: 'Lora';
@@ -38,4 +37,10 @@
     .text__header{
         text-align: center;
     }
+}
+
+@media (max-width: 360px){
+  .container{
+    margin-bottom: 0px;
+  }
 }
