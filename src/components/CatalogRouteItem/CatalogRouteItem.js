@@ -129,13 +129,15 @@ class CatalogRouteItem extends React.Component {
     }
   }
   clickHandler(idx) {
+    console.log(idx);
     this.setState({selectedItem: idx});
+    //this.props.getImages();
   }
 
 
   render() {
     const {hasFilter, indexOfCatalogItem: index,decoration,park,architecture} = this.props;
-    console.log(park);
+    //const{getImages} = this.props.load;
 
     return (
       <div className={s.container}>
@@ -150,7 +152,6 @@ class CatalogRouteItem extends React.Component {
                 {
                   filterItems.map(function (el, idx) {
                     var is_selected = this.state.selectedItem == idx;
-                    //console.log('selected = ' + idx + ' = ' + is_selected);
                     return <FilterItem
                       key={el.id}
                       name={el.name}
