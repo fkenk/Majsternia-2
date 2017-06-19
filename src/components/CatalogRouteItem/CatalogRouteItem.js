@@ -2,7 +2,9 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './CatalogRouteItem.css';
 import FilterItem from '../FilterItem';
-import history from '../../history'
+import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as load from '../../actions/apiAction'
 
 var filterItems = [
   {
@@ -127,12 +129,15 @@ class CatalogRouteItem extends React.Component {
     }
   }
   clickHandler(idx) {
+    console.log(idx);
     this.setState({selectedItem: idx});
+    //this.props.getImages();
   }
 
+
   render() {
-    console.log('renderStart')
-    const {hasFilter, indexOfCatalogItem: index} = this.props;
+    const {hasFilter, indexOfCatalogItem: index,decoration,park,architecture} = this.props;
+    //const{getImages} = this.props.load;
 
     return (
       <div className={s.container}>
@@ -147,7 +152,6 @@ class CatalogRouteItem extends React.Component {
                 {
                   filterItems.map(function (el, idx) {
                     var is_selected = this.state.selectedItem == idx;
-                    //console.log('selected = ' + idx + ' = ' + is_selected);
                     return <FilterItem
                       key={el.id}
                       name={el.name}
@@ -208,5 +212,18 @@ class CatalogRouteItem extends React.Component {
     );
   }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    pageActions: bindActionCreators(load, dispatch)
+  }
+}
 
-export default withStyles(s)(CatalogRouteItem);
+function mapStateToProps(state) {
+  return {
+    decoration: state.decoration,
+    architecture: state.architecture,
+    park: state.park
+  }
+}
+export default withStyles(s)(connect(mapStateToProps,mapDispatchToProps)(CatalogRouteItem));
+

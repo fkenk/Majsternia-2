@@ -23,7 +23,6 @@ export default {
       context.store.dispatch(load.getData('about', 'GET_DATA_ABOUT')),
       context.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS')),
     ]);
-    console.log(context.store.getState().aboutUs);
     return {
       title: 'Home',
       component: <Layout><Home context={context}/></Layout>,
