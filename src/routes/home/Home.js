@@ -21,16 +21,16 @@ class Home extends React.Component {
 
   render() {
 
-    const {aboutUs, projects} = this.props;
-    const { getData } = this.props.pageActions; //doesnt work???
-
+    const {aboutUs, projects, contactForm} = this.props;
+    const { pageActions } = this.props.pageActions; //doesnt work???
+    console.log(this.props.pageActions);
     return (
       <div >
         <Header type="home"/>
         <Catalog/>
         <AboutUs aboutUs={aboutUs}/>
         <Gallery projects={projects}/>
-        <ContactForm context={this.props.context} getData={load.getData}/>
+        <ContactForm msg={contactForm.data.msg} context={this.props.context} getData={this.props.pageActions}/>
         <Footer />
       </div>
     );
@@ -40,12 +40,13 @@ class Home extends React.Component {
 function mapStateToProps(state) {
   return {
     aboutUs: state.aboutUs,
-    projects: state.projects
+    projects: state.projects,
+    contactForm: state.contactForm
   }
 }
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(load, dispatch)
+    pageActions: bindActionCreators(load.getData, dispatch)
   }
 }
 
