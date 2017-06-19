@@ -9,7 +9,7 @@ function LanguageSwitcher({ currentLocale, availableLocales, setLocale }) {
   const isSelected = locale => locale === currentLocale;
   const localeDict = {
     'Рус': 'English',
-    'Укр': 'Ukrainian',
+    'Укрd': 'Ukrainian',
   };
   const localeName = locale => localeDict[locale] || locale;
   return (

@@ -18,7 +18,8 @@ export default {
 
   async action(context) {
     //dispatch.store.dispatch(load.getPhotos());
-    console.log(context);
+    console.log();
+
     await Promise.all([
       context.store.dispatch(load.getData('about', 'GET_DATA_ABOUT')),
       context.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS')),

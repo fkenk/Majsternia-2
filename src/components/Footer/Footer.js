@@ -17,12 +17,11 @@ class Footer extends React.Component {
         <div className={s.map}>
           <GoogleMapReact
             defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-          >
+            defaultZoom={this.props.zoom}>
           </GoogleMapReact>
         </div>
         <div className={s.text}>
-          <h3 className={s.text__header} >Контакти</h3>
+          <h3 className={s.text__header}>Контакти</h3>
           <div className={s.text__contacts}>
             <div className={s.text__phone}>
               <Link to="tel:+380664455900">+38 066 445 59 00</Link>

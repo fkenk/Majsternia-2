@@ -11,6 +11,7 @@ class ContactForm extends React.Component {
       userTel: '',
       userEmail: '',
       userMessage: '',
+      response: ''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -33,7 +34,9 @@ class ContactForm extends React.Component {
     formData.append('userTel' , this.state.userTel);
     formData.append('userEmail' , this.state.userEmail);
     formData.append('userMessage' , this.state.userMessage);
-    this.props.context.store.dispatch(this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData));
+    //this.props.context.store.dispatch();
+    this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData).then(this.state.userMessage = this.props.msg);
+
   }
 
   render() {
@@ -56,7 +59,7 @@ class ContactForm extends React.Component {
                    onChange={this.handleInputChange}/>
             <textarea name="userMessage" placeholder="Ваша ідея або питання" required
                       value={this.state.userMessage}
-                      onChange={this.handleInputChange}/>
+                      onChange={this.handleInputChange}></textarea>
             <input type="submit" value="Зв'язатись"/>
           </form>
         </div>
@@ -64,5 +67,6 @@ class ContactForm extends React.Component {
     );
   }
 }
+
 
 export default withStyles(s)(ContactForm);

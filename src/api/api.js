@@ -59,7 +59,7 @@ export default class IndexService extends Api {
   }
 
   decoration(params) {
-    let type = "marble"
+    let type = "marble";
     return this.get(`/catalog/decoration/?type=${type}`, params)
   }
 
@@ -68,7 +68,6 @@ export default class IndexService extends Api {
   }
 
   callback(body) {
-    console.log('called')
     return this.post('/callback/', body)
   }
 }
