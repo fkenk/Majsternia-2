@@ -23,7 +23,6 @@ class Home extends React.Component {
 
     const {aboutUs, projects, contactForm} = this.props;
     const { pageActions } = this.props.pageActions; //doesnt work???
-    console.log(this.props.pageActions);
     return (
       <div >
         <Header type="home"/>
