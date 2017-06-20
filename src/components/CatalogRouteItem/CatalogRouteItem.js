@@ -220,6 +220,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
+  console.log(state.decoration);
   return {
     decoration: state.decoration,
     architecture: state.architecture,
