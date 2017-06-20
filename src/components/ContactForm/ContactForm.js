@@ -30,16 +30,21 @@ class ContactForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
-    formData.append('userName' , this.state.userName);
-    formData.append('userTel' , this.state.userTel);
-    formData.append('userEmail' , this.state.userEmail);
-    formData.append('userMessage' , this.state.userMessage);
+    formData.append('userName', this.state.userName);
+    formData.append('userTel', this.state.userTel);
+    formData.append('userEmail', this.state.userEmail);
+    formData.append('userMessage', this.state.userMessage);
     //this.props.context.store.dispatch();
-    this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData).then(this.state.userMessage = this.props.msg);
+    this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
+      .then(function (response) {
+        this.state.userMessage = this.props.msg
+      }.bind(this));
 
   }
 
   render() {
+    console.log('msg='+this.props.msg);
+
     return (
       <div className={s.container}>
         <div className={s.text}>
