@@ -7,34 +7,39 @@ import {bindActionCreators} from 'redux'
 import * as load from '../../actions/apiAction'
 import Link from '../Link';
 
-var filterItems = [
+const filterItems = [
   {
     id: 1,
+    value: "marble",
     name: "мармур",
     link: "/catalog?stone=0"
   }, {
     id: 2,
+    value: "granite",
     name: "граніт",
     link: "/catalog?stone=1"
   }, {
     id: 3,
+    value: "quartzite",
     name: "пісковик",
     link: "/catalog?stone=2"
   }, {
     id: 4,
+    value: "sandstone",
     name: "вапняк",
     link: "/catalog?stone=3"
   }, {
     id: 5,
+    value: "limestone",
     name: "квацит",
     link: "/catalog?stone=4"
   }, {
     id: 6,
+    value: "onyx",
     name: "онікс",
     link: "/catalog?stone=5"
   }
 ];
-
 const PICTURES = [
   {
     id: 1,
@@ -123,8 +128,7 @@ const dimensions= {
     }]
 };
 
-class CatalogRouteItem extends React.Component {
-
+class CatalogRouteItem extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -135,14 +139,28 @@ class CatalogRouteItem extends React.Component {
   }
 
   clickHandler(idx) {
-    console.log(idx);
+    //console.log(idx);
+   // e.preventDefault();
+    this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES',[{
+      type: `${filterItems[idx].value}`
+    }]);
+
+    //const {changeType} = this.props.load;
+    // changeType('decoration', 'GET_DECORATION_IMAGES',[{
+    //   type: 'granite'
+    // }]);
+    //console.log(this.props.load);
     this.setState({selectedItem: idx});
-    //this.props.getImages();
+    return false;
+    // this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
+    // context.store.dispatch(load.getData('decoration', 'GET_DECORATION_IMAGES',[{
+    //   type: 'marble'
+    // }]))
   }
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture} = this.props;
+    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture,getData} = this.props;
     //const{getImages} = this.props.load;
 
     return (
@@ -174,7 +192,7 @@ class CatalogRouteItem extends React.Component {
             {
               decoration.data.map(function (el, index){
                 return(
-                        <div className={s.wrapper} style={dimensions.dimensionsInner[index]}>
+                        <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
                           <Link to='/' className={s.image} alt={el.alt}
                                 style={{backgroundImage: `url(${el.img})`}}/>
                         </div>
@@ -194,7 +212,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  console.log(state.decoration);
   return {
     decoration: state.decoration,
     architecture: state.architecture,
