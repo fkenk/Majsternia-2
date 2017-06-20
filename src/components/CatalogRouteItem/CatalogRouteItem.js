@@ -12,32 +12,32 @@ const filterItems = [
     id: 1,
     value: "marble",
     name: "мармур",
-    link: "/catalog?stone=0"
+    link: "/catalog?stone=marble"
   }, {
     id: 2,
     value: "granite",
     name: "граніт",
-    link: "/catalog?stone=1"
+    link: "/catalog?stone=granite"
   }, {
     id: 3,
     value: "quartzite",
     name: "пісковик",
-    link: "/catalog?stone=2"
+    link: "/catalog?stone=quartzite"
   }, {
     id: 4,
     value: "sandstone",
     name: "вапняк",
-    link: "/catalog?stone=3"
+    link: "/catalog?stone=sandstone"
   }, {
     id: 5,
     value: "limestone",
     name: "квацит",
-    link: "/catalog?stone=4"
+    link: "/catalog?stone=limestone"
   }, {
     id: 6,
     value: "onyx",
     name: "онікс",
-    link: "/catalog?stone=5"
+    link: "/catalog?stone=onyx"
   }
 ];
 const PICTURES = [
@@ -108,7 +108,7 @@ const ROW_PICTURES = [
   ]
 ];
 
-const dimensions= {
+const dimensions = {
   dimensionsInner: [
     {
       width: '280px',
@@ -122,7 +122,7 @@ const dimensions= {
     }, {
       width: '380px',
       height: "160px"
-    },{
+    }, {
       width: '380px',
       height: "240px"
     }]
@@ -132,7 +132,7 @@ class CatalogRouteItem extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    let selectedItem = this.props.stoneId || 0;
+    let selectedItem = this.props.stoneId || 'marble';
     this.state = {
       selectedItem
     }
@@ -140,17 +140,17 @@ class CatalogRouteItem extends React.PureComponent {
 
   clickHandler(idx) {
     //console.log(idx);
-   // e.preventDefault();
-    this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES',[{
+    // e.preventDefault();
+  /*  this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES', [{
       type: `${filterItems[idx].value}`
-    }]);
+    }]);*/
 
     //const {changeType} = this.props.load;
     // changeType('decoration', 'GET_DECORATION_IMAGES',[{
     //   type: 'granite'
     // }]);
     //console.log(this.props.load);
-    this.setState({selectedItem: idx});
+    this.setState({selectedItem: filterItems[idx].value});
     return false;
     // this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
     // context.store.dispatch(load.getData('decoration', 'GET_DECORATION_IMAGES',[{
@@ -160,7 +160,7 @@ class CatalogRouteItem extends React.PureComponent {
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture,getData} = this.props;
+    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture, getData} = this.props;
     //const{getImages} = this.props.load;
 
     return (
@@ -175,7 +175,7 @@ class CatalogRouteItem extends React.PureComponent {
               <div className={s.liItems}>
                 {
                   filterItems.map(function (el, idx) {
-                    var is_selected = this.state.selectedItem == idx;
+                    var is_selected = this.state.selectedItem === filterItems[idx].value;
                     return <FilterItem
                       key={el.id}
                       name={el.name}
@@ -185,17 +185,18 @@ class CatalogRouteItem extends React.PureComponent {
                     />;
                   }.bind(this))
                 }
-              </div>`
+              </div>
+              `
             </div>
           }
           <div className={s.images}>
             {
-              decoration.data.map(function (el, index){
-                return(
-                        <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
-                          <Link to='/' className={s.image} alt={el.alt}
-                                style={{backgroundImage: `url(${el.img})`}}/>
-                        </div>
+              decoration.data.map(function (el, index) {
+                return (
+                  <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
+                    <Link to='/' className={s.image} alt={el.alt}
+                          style={{backgroundImage: `url(${el.img})`}}/>
+                  </div>
                 );
               })
             }
