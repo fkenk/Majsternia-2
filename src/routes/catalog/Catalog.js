@@ -38,7 +38,7 @@ const CatalogItems = [
 class Catalog extends React.Component {
   render() {
     let stoneId = this.props.context.query.stone;
-    const {aboutUs} = this.props;
+    const {aboutUs, contactForm} = this.props;
     return (
       <div >
         <Header />
@@ -57,7 +57,7 @@ class Catalog extends React.Component {
           }
         </div>
         <AboutUs aboutUs={aboutUs}/>
-        <ContactForm context={this.props.context} getData={load.getData} />
+        <ContactForm msg = {contactForm.data.msg} context={this.props.context} getData={this.props.pageActions} />
         <Footer />
       </div>)
   }
@@ -65,13 +65,14 @@ class Catalog extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(load, dispatch)
+    pageActions: bindActionCreators(load.getData, dispatch)
   }
 }
 
 function mapStateToProps(state) {
   return {
-    aboutUs: state.aboutUs
+    aboutUs: state.aboutUs,
+    contactForm: state.contactForm
   }
 }
 

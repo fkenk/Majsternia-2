@@ -43,32 +43,5 @@
     "files": [
       "src/components/Navigation/Navigation.js"
     ]
-  },
-  {
-    "id": "header.banner.desc",
-    "description": "Description in header",
-    "defaultMessage": "Complex web apps made easy",
-    "message": "",
-    "files": [
-      "src/components/Header/Header.js"
-    ]
-  },
-  {
-    "id": "header.banner.title",
-    "description": "Title in page header",
-    "defaultMessage": "React",
-    "message": "",
-    "files": [
-      "src/components/Header/Header.js"
-    ]
-  },
-  {
-    "id": "header.brand",
-    "description": "Brand name displayed in header",
-    "defaultMessage": "Your Company Bsdfsdrand",
-    "message": "",
-    "files": [
-      "src/components/Header/Header.js"
-    ]
   }
 ]
