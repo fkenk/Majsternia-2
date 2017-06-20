@@ -41,13 +41,13 @@ class MyLanguageSwitcher extends React.Component {
                         color: this.myColor(0)
                     }}
                     onClick={() => {this.toggle(0)}}>
-                    Укр
+                    УКР
                 </span>
-                <span>/</span>
+                <span> / </span>
                 <span
                     style={{color: this.myColor(1)}}
                     onClick={() => {this.toggle(1)}}>
-                    Рус
+                    РУС
                 </span>
             </div>
         );

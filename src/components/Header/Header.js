@@ -80,7 +80,7 @@ const Header = (props) => {
         <div className={s.header__content}>
           <div className={s.sidebar}>
             <div className={s.statement}>
-                        <span>Створюємо шедeври
+              <span>Створюємо шедeври<br></br>
                                 з натурального каменю власноруч</span>
             </div>
             <div className={s.footer}>

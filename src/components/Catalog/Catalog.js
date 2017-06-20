@@ -41,9 +41,9 @@ class Catalog extends React.PureComponent {
         <div className={s.content}>
           <div className={s.info}>
             <div className={s.names}>
-              <span>Внутрішнє та зовнішнє оздоблення</span>
-              <span>Складні архітектурні вироби</span>
-              <span>Садово-паркове мистецтво</span>
+              <Link to="/" className={s.link__names}>Внутрішнє та зовнішнє оздоблення</Link>
+              <Link to="/" className={s.link__names}>Складні архітектурні вироби</Link>
+              <Link to="/" className={s.link__names}>Садово-паркове мистецтво</Link>
             </div>
             <Link to="/" className={s.link}>
               <div className={s.button}>Каталог продукції</div>
