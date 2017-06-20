@@ -5,6 +5,7 @@ import FilterItem from '../FilterItem';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as load from '../../actions/apiAction'
+import Link from '../Link';
 
 var filterItems = [
   {
@@ -102,21 +103,25 @@ const ROW_PICTURES = [
   ]
 ];
 
-// const images = PICTURES.map((el, i) => {
-//   const itemStyle = {
-//     backgroundImage: `url(${el.image})`,
-//     height: height
-//   };
-//   let boxStyle = {
-//     height: el.height,
-//     width: el.width
-//   };
-//   return(
-//       <div className={s.Box} style={boxStyle} key={i}>
-//         <a href="/" className={s.item} style={itemStyle}></a>
-//       </div>
-//   )
-// });
+const dimensions= {
+  dimensionsInner: [
+    {
+      width: '280px',
+      height: '420px'
+    }, {
+      width: '180px',
+      height: "220px"
+    }, {
+      width: '180px',
+      height: "180px"
+    }, {
+      width: '380px',
+      height: "160px"
+    },{
+      width: '380px',
+      height: "240px"
+    }]
+};
 
 class CatalogRouteItem extends React.Component {
 
@@ -162,50 +167,19 @@ class CatalogRouteItem extends React.Component {
                     />;
                   }.bind(this))
                 }
-              </div>
+              </div>`
             </div>
           }
           <div className={s.images}>
             {
-              (index == 0) ?
-                PICTURES.map(function (el, index) {
-                  if (index == 0) {
-                    return <img
-                      key={el.id}
-                      src={el.image}
-                      width={el.width}
-                      height={el.height}
-                      className={s.image}
-                      alt="Here is img"/>
-
-                  } else {
-                    return (
-                      <div className={s.column} key={index / 10}>
-                        {
-                          PICTURES[index].map(function (el) {
-                            return <img
-                              key={el.id}
-                              src={el.image}
-                              width={el.width}
-                              height={el.height}
-                              className={s.image}
-                              alt="Here is img"/>
-                          })
-                        }
-                      </div>
-                    );
-                  }
-                })
-                :
-                ROW_PICTURES[index - 1].map(function (el) {
-                  return <img
-                    key={el.id}
-                    src={el.image}
-                    width={el.width}
-                    height={el.height}
-                    className={s.image}
-                    alt="Here is img"/>
-                })
+              decoration.data.map(function (el, index){
+                return(
+                        <div className={s.wrapper} style={dimensions.dimensionsInner[index]}>
+                          <Link to='/' className={s.image} alt={el.alt}
+                                style={{backgroundImage: `url(${el.img})`}}/>
+                        </div>
+                );
+              })
             }
           </div>
         </div>
