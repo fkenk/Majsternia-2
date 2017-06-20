@@ -37,14 +37,12 @@ class ContactForm extends React.Component {
     //this.props.context.store.dispatch();
     this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
       .then(function (response) {
-        this.state.userMessage = this.props.msg
+        this.setState({userMessage : this.props.msg})
       }.bind(this));
 
   }
 
   render() {
-    console.log('msg='+this.props.msg);
-
     return (
       <div className={s.container}>
         <div className={s.text}>
