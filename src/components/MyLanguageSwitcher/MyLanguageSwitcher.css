@@ -4,6 +4,8 @@
     font-family: Roboto;
     font-weight:500;
     cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
 }
 /*.container, .containerHide span:last-child{*/
     /*font-weight: 700;*/

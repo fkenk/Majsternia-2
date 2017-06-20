@@ -25,13 +25,19 @@
   margin-right: 59px;
 
 }
-.names span{
+.link__names{
   font-family: Roboto;
   font-size: 20px;
   color: #747880;
   margin-bottom: 28px;
+  cursor: pointer;
 }
-.names span:first-child{
+.link__names:first-child{
+  color: #3C3C43;
+  font-weight: 700;
+}
+
+.link__names:hover {
   color: #3C3C43;
   font-weight: 700;
 }
@@ -44,6 +50,7 @@
   font-weight: 500;
   font-size: 20px;
   width: 220px;
+  text-align: center;
 }
 
 .button:hover {

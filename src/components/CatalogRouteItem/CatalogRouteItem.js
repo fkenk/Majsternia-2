@@ -141,7 +141,7 @@ class CatalogRouteItem extends React.PureComponent {
   clickHandler(idx) {
     //console.log(idx);
     // e.preventDefault();
-  /*  this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES', [{
+    /*this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES', [{
       type: `${filterItems[idx].value}`
     }]);*/
 
