@@ -35,7 +35,7 @@ const CatalogItems = [
     hasFilter: false
   }
 ]
-class Catalog extends React.Component {
+class Catalog extends React.PureComponent {
   render() {
     let stoneId = this.props.context.query.stone;
     const {aboutUs, contactForm} = this.props;
