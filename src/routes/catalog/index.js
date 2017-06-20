@@ -17,14 +17,11 @@ export default {
   path: '/catalog',
 
   async action(context) {
-    //dispatch.store.dispatch(load.getPhotos());
-    console.log();
-
     await Promise.all([
       context.store.dispatch(load.getData('about', 'GET_DATA_ABOUT')),
       context.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS')),
       context.store.dispatch(load.getData('decoration', 'GET_DECORATION_IMAGES',[{
-        type: 'marble'
+        type: context.query.stone
       }])),
       context.store.dispatch(load.getData('architecture', 'GET_ARCHITECTURE_IMAGES')),
       context.store.dispatch(load.getData('park', 'GET_PARK_IMAGES')),
