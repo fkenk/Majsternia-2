@@ -73,6 +73,29 @@ textarea {
   resize: none;
 }
 
+.popUp {
+  background: #3C3C43;
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+  width: 100%;
+  padding: 15px;
+}
+
+.close {
+  color: white;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  top: 5px;
+}
+
+.close:after {
+  content: '✖'; /* UTF-8 symbol */
+}
+
 @media (max-width: 360px) {
   .container{
     padding-bottom: 60px;

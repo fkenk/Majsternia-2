@@ -37,11 +37,19 @@ class ContactForm extends React.Component {
     //this.props.context.store.dispatch();
     this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
       .then(function (response) {
-        this.setState({userMessage : this.props.msg})
+        this.setState({response: this.props.msg, isActive: true});
+        var that = this;
+        setTimeout(function () {
+          that.setState({isActive : false});
+        }, 5000);
       }.bind(this));
-
   }
 
+  hideAlert() {
+    this.setState({
+      isActive: false,
+    });
+  }
   render() {
     return (
       <div className={s.container}>
@@ -63,6 +71,13 @@ class ContactForm extends React.Component {
             <textarea name="userMessage" placeholder="Ваша ідея або питання" required
                       value={this.state.userMessage}
                       onChange={this.handleInputChange}></textarea>
+            <div>
+              {this.state.isActive && <div className={s.popUp}>
+                <span className={s.close}
+                        onClick={() => this.hideAlert()}></span>
+                {this.state.response}
+              </div>}
+            </div>
             <input type="submit" value="Зв'язатись"/>
           </form>
         </div>
