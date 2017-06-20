@@ -139,29 +139,14 @@ class CatalogRouteItem extends React.PureComponent {
   }
 
   clickHandler(idx) {
-    //console.log(idx);
-    // e.preventDefault();
-    /*this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES', [{
-      type: `${filterItems[idx].value}`
-    }]);*/
-
-    //const {changeType} = this.props.load;
-    // changeType('decoration', 'GET_DECORATION_IMAGES',[{
-    //   type: 'granite'
-    // }]);
-    //console.log(this.props.load);
     this.setState({selectedItem: filterItems[idx].value});
     return false;
-    // this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
-    // context.store.dispatch(load.getData('decoration', 'GET_DECORATION_IMAGES',[{
-    //   type: 'marble'
-    // }]))
   }
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture, getData} = this.props;
-    //const{getImages} = this.props.load;
+    const {hasFilter, indexOfCatalogItem: index, decoration, catalog} = this.props;
+    const currentImages = Object.keys(catalog[index])[0].toString();
 
     return (
       <div className={s.container}>
@@ -191,12 +176,12 @@ class CatalogRouteItem extends React.PureComponent {
           }
           <div className={s.images}>
             {
-              decoration.data.map(function (el, index) {
-                return (
-                  <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
-                    <Link to='/' className={s.image} alt={el.alt}
-                          style={{backgroundImage: `url(${el.img})`}}/>
-                  </div>
+              catalog[index][currentImages].data.map(function (el, index){
+                return(
+                    <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
+                      <Link to='/' className={s.image} alt={el.alt}
+                            style={{backgroundImage: `url(${el.img})`}}/>
+                    </div>
                 );
               })
             }
@@ -214,9 +199,11 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    decoration: state.decoration,
-    architecture: state.architecture,
-    park: state.park
+    catalog:[
+      {decoration: state.decoration},
+      {architecture: state.architecture},
+      {park: state.park}
+    ]
   }
 }
 export default withStyles(s)(connect(mapStateToProps, mapDispatchToProps)(CatalogRouteItem));
