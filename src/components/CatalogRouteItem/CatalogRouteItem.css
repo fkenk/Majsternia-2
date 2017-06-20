@@ -72,6 +72,9 @@
   background-position: center center;
   transition: all 0.5s;
 }
+.image:hover {
+  transform: scale(1.2);
+}
 .image:last-child{
   margin-right:0;
 }
