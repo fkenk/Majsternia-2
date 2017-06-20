@@ -5,35 +5,41 @@ import FilterItem from '../FilterItem';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as load from '../../actions/apiAction'
+import Link from '../Link';
 
-var filterItems = [
+const filterItems = [
   {
     id: 1,
+    value: "marble",
     name: "мармур",
     link: "/catalog?stone=0"
   }, {
     id: 2,
+    value: "granite",
     name: "граніт",
     link: "/catalog?stone=1"
   }, {
     id: 3,
+    value: "quartzite",
     name: "пісковик",
     link: "/catalog?stone=2"
   }, {
     id: 4,
+    value: "sandstone",
     name: "вапняк",
     link: "/catalog?stone=3"
   }, {
     id: 5,
+    value: "limestone",
     name: "квацит",
     link: "/catalog?stone=4"
   }, {
     id: 6,
+    value: "onyx",
     name: "онікс",
     link: "/catalog?stone=5"
   }
 ];
-
 const PICTURES = [
   {
     id: 1,
@@ -102,24 +108,27 @@ const ROW_PICTURES = [
   ]
 ];
 
-// const images = PICTURES.map((el, i) => {
-//   const itemStyle = {
-//     backgroundImage: `url(${el.image})`,
-//     height: height
-//   };
-//   let boxStyle = {
-//     height: el.height,
-//     width: el.width
-//   };
-//   return(
-//       <div className={s.Box} style={boxStyle} key={i}>
-//         <a href="/" className={s.item} style={itemStyle}></a>
-//       </div>
-//   )
-// });
+const dimensions= {
+  dimensionsInner: [
+    {
+      width: '280px',
+      height: '420px'
+    }, {
+      width: '180px',
+      height: "220px"
+    }, {
+      width: '180px',
+      height: "180px"
+    }, {
+      width: '380px',
+      height: "160px"
+    },{
+      width: '380px',
+      height: "240px"
+    }]
+};
 
-class CatalogRouteItem extends React.Component {
-
+class CatalogRouteItem extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -130,14 +139,28 @@ class CatalogRouteItem extends React.Component {
   }
 
   clickHandler(idx) {
-    console.log(idx);
+    //console.log(idx);
+   // e.preventDefault();
+    this.props.pageActions.getData('decoration', 'GET_DECORATION_IMAGES',[{
+      type: `${filterItems[idx].value}`
+    }]);
+
+    //const {changeType} = this.props.load;
+    // changeType('decoration', 'GET_DECORATION_IMAGES',[{
+    //   type: 'granite'
+    // }]);
+    //console.log(this.props.load);
     this.setState({selectedItem: idx});
-    //this.props.getImages();
+    return false;
+    // this.props.getData('callback', 'POST_DATA_CONTACT_FORM', formData)
+    // context.store.dispatch(load.getData('decoration', 'GET_DECORATION_IMAGES',[{
+    //   type: 'marble'
+    // }]))
   }
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture} = this.props;
+    const {hasFilter, indexOfCatalogItem: index, decoration, park, architecture,getData} = this.props;
     //const{getImages} = this.props.load;
 
     return (
@@ -162,50 +185,19 @@ class CatalogRouteItem extends React.Component {
                     />;
                   }.bind(this))
                 }
-              </div>
+              </div>`
             </div>
           }
           <div className={s.images}>
             {
-              (index == 0) ?
-                PICTURES.map(function (el, index) {
-                  if (index == 0) {
-                    return <img
-                      key={el.id}
-                      src={el.image}
-                      width={el.width}
-                      height={el.height}
-                      className={s.image}
-                      alt="Here is img"/>
-
-                  } else {
-                    return (
-                      <div className={s.column} key={index / 10}>
-                        {
-                          PICTURES[index].map(function (el) {
-                            return <img
-                              key={el.id}
-                              src={el.image}
-                              width={el.width}
-                              height={el.height}
-                              className={s.image}
-                              alt="Here is img"/>
-                          })
-                        }
-                      </div>
-                    );
-                  }
-                })
-                :
-                ROW_PICTURES[index - 1].map(function (el) {
-                  return <img
-                    key={el.id}
-                    src={el.image}
-                    width={el.width}
-                    height={el.height}
-                    className={s.image}
-                    alt="Here is img"/>
-                })
+              decoration.data.map(function (el, index){
+                return(
+                        <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
+                          <Link to='/' className={s.image} alt={el.alt}
+                                style={{backgroundImage: `url(${el.img})`}}/>
+                        </div>
+                );
+              })
             }
           </div>
         </div>

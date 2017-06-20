@@ -33,7 +33,7 @@ const Photos = [
   }
 ];
 
-class Catalog extends React.Component {
+class Catalog extends React.PureComponent {
   render() {
     return (
       <div className={s.container}>

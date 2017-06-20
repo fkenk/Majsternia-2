@@ -59,8 +59,7 @@ export default class IndexService extends Api {
   }
 
   decoration(params) {
-    let type = "marble";
-    return this.get(`/catalog/decoration/?type=${type}`, params)
+    return this.get(`/catalog/decoration/`, params)
   }
 
   projects(params) {
