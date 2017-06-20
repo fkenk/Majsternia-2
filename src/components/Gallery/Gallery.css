@@ -94,6 +94,9 @@
 
 
 @media (max-width: 360px) {
+  .container{
+    padding-bottom: 85px;
+  }
   .text__header {
     font-size: 36px;
   }
