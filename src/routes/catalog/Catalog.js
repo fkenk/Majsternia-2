@@ -57,7 +57,7 @@ class Catalog extends React.Component {
           }
         </div>
         <AboutUs aboutUs={aboutUs}/>
-        <ContactForm context={this.props.context} getData={load.getData} />
+        <ContactForm context={this.props.context} getData={this.props.pageActions} />
         <Footer />
       </div>)
   }
@@ -65,7 +65,7 @@ class Catalog extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(load, dispatch)
+    pageActions: bindActionCreators(load.getData, dispatch)
   }
 }
 
