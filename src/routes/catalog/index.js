@@ -21,7 +21,7 @@ export default {
       context.store.dispatch(load.getData('about', 'GET_DATA_ABOUT')),
       context.store.dispatch(load.getData('projects', 'GET_DATA_PROJECTS')),
       context.store.dispatch(load.getData('decoration', 'GET_DECORATION_IMAGES',[{
-        type: 'marble'
+        type: context.query.stone
       }])),
       context.store.dispatch(load.getData('architecture', 'GET_ARCHITECTURE_IMAGES')),
       context.store.dispatch(load.getData('park', 'GET_PARK_IMAGES')),
