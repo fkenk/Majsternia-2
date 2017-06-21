@@ -108,8 +108,8 @@ const ROW_PICTURES = [
   ]
 ];
 
-const dimensions = {
-  dimensionsInner: [
+const dimensions = [
+  [
     {
       width: '280px',
       height: '420px'
@@ -125,8 +125,31 @@ const dimensions = {
     }, {
       width: '380px',
       height: "240px"
-    }]
-};
+    }
+  ],[
+      {
+        width: '280px',
+        height: '420px'
+      }, {
+        width: '180px',
+        height: "220px"
+      }, {
+        width: '180px',
+        height: "180px"
+      }, {
+        width: '380px',
+        height: "160px"
+      }, {
+        width: '380px',
+        height: "240px"
+      }
+      ],[
+        {
+          width: '880px',
+          height: "387px"
+        }
+      ]
+];
 
 class CatalogRouteItem extends React.PureComponent {
 
@@ -145,7 +168,7 @@ class CatalogRouteItem extends React.PureComponent {
 
 
   render() {
-    const {hasFilter, indexOfCatalogItem: index, decoration, catalog} = this.props;
+    const {hasFilter, indexOfCatalogItem: index,catalog} = this.props;
     const currentImages = Object.keys(catalog[index])[0].toString();
 
     return (
@@ -176,9 +199,10 @@ class CatalogRouteItem extends React.PureComponent {
           }
           <div className={s.images}>
             {
-              catalog[index][currentImages].data.map(function (el, index){
+              catalog[index][currentImages].data.map(function (el, i){
+                console.log(catalog[0])
                 return(
-                    <div key={index} className={s.wrapper} style={dimensions.dimensionsInner[index]}>
+                    <div key={i} className={s.wrapper} style={dimensions[index][i]}>
                       <Link to='/' className={s.image} alt={el.alt}
                             style={{backgroundImage: `url(${el.img})`}}/>
                     </div>
